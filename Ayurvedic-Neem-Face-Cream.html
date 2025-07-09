@@ -74,50 +74,179 @@
       .accordion-content.active {
         max-height: 200px;
       }
+      /* --- RESPONSIVE STYLES --- */
+      html {
+        box-sizing: border-box;
+      }
+      *,
+      *:before,
+      *:after {
+        box-sizing: inherit;
+      }
+      body {
+        overflow-x: hidden;
+      }
+      /* Product image/details grid */
+      @media (max-width: 1023px) {
+        .lg\:grid-cols-2 {
+          grid-template-columns: 1fr !important;
+        }
+        .sticky-cart {
+          position: static;
+          top: auto;
+        }
+      }
+      @media (max-width: 767px) {
+        .max-w-7xl {
+          padding-left: 0.5rem !important;
+          padding-right: 0.5rem !important;
+        }
+        .h-96 {
+          height: 16rem !important;
+        }
+        .w-20,
+        .h-20 {
+          width: 4rem !important;
+          height: 4rem !important;
+        }
+        .space-y-4 > :not([hidden]) ~ :not([hidden]) {
+          margin-top: 1rem !important;
+        }
+      }
+      /* Tabs: scrollable on mobile */
+      @media (max-width: 767px) {
+        nav.flex.space-x-8 {
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
+          flex-wrap: nowrap;
+          gap: 0.5rem !important;
+        }
+        nav.flex.space-x-8 button {
+          min-width: 120px;
+          font-size: 1rem;
+          padding-left: 0.75rem;
+          padding-right: 0.75rem;
+        }
+      }
+      /* Feature icons grid: 1 or 2 columns on mobile */
+      @media (max-width: 767px) {
+        .lg\:grid-cols-4,
+        .md\:grid-cols-2 {
+          grid-template-columns: 1fr !important;
+        }
+        .md\:grid-cols-2 {
+          grid-template-columns: 1fr !important;
+        }
+        .grid-cols-1 {
+          grid-template-columns: 1fr !important;
+        }
+      }
+      @media (min-width: 480px) and (max-width: 767px) {
+        .lg\:grid-cols-4,
+        .md\:grid-cols-2 {
+          grid-template-columns: 1fr 1fr !important;
+        }
+      }
+      /* Related products: horizontal scroll on mobile */
+      @media (max-width: 767px) {
+        .you-may-also-like-scroll {
+          display: flex !important;
+          flex-wrap: nowrap !important;
+          overflow-x: auto !important;
+          gap: 1rem !important;
+          -webkit-overflow-scrolling: touch;
+        }
+        .you-may-also-like-scroll > * {
+          min-width: 80vw;
+          max-width: 90vw;
+          flex: 0 0 auto;
+        }
+      }
+      /* Hide horizontal scrollbars visually but keep scroll */
+      .you-may-also-like-scroll::-webkit-scrollbar {
+        display: none;
+      }
+      .you-may-also-like-scroll {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      /* Cart sidebar: full width on mobile */
+      @media (max-width: 640px) {
+        #cartSidebar {
+          width: 100vw !important;
+          min-width: 0 !important;
+          max-width: 100vw !important;
+        }
+      }
+      /* Footer grid responsive */
+      @media (max-width: 1023px) {
+        .lg\:grid-cols-4 {
+          grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        }
+      }
+      @media (max-width: 767px) {
+        .lg\:grid-cols-4,
+        .md\:grid-cols-2 {
+          grid-template-columns: 1fr !important;
+        }
+      }
+      /* Prevent text overflow */
+      .line-clamp-2 {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+      /* Ensure no horizontal scroll on body */
+      html,
+      body {
+        max-width: 100vw;
+        overflow-x: hidden;
+      }
     </style>
   </head>
   <body class="bg-white">
     <header class="sticky top-0 z-50 bg-white shadow-md">
       <!-- Top Bar -->
-      <div class="bg-gradient-to-r from-primary to-primary/80 text-white py-2">
-        <div class="container mx-auto px-4 flex justify-between items-center">
-          <p class="text-sm">Free shipping on orders over ₹2000</p>
-          <div class="flex items-center space-x-4">
-            <a href="#" class="text-sm hover:underline">Track Order</a>
-            <a href="#" class="text-sm hover:underline">Contact Us</a>
+      <!-- <div class="bg-gradient-to-r from-primary to-primary/80 text-white py-2 text-xs sm:text-sm">
+        <div class="container mx-auto px-2 sm:px-4 flex flex-col sm:flex-row justify-between items-center gap-1 sm:gap-0">
+          <p class="text-xs sm:text-sm">Free shipping on orders over ₹2000</p>
+          <div class="flex items-center space-x-2 sm:space-x-4">
+            <a href="#" class="text-xs sm:text-sm hover:underline">Track Order</a>
+            <a href="#" class="text-xs sm:text-sm hover:underline">Contact Us</a>
           </div>
         </div>
-      </div>
+      </div> -->
       <!-- Main Header -->
-      <div class="container mx-auto px-4 py-4">
-        <div class="flex items-center justify-between">
+      <div class="container mx-auto px-2 sm:px-4 py-3 sm:py-4">
+        <div class="flex items-center justify-between gap-2">
           <!-- Logo -->
-          <a href="index.html" class="flex items-center space-x-2">
+          <a href="index.html" class="flex items-center space-x-2 min-w-0">
             <img
               src="img/logo1.png"
               alt="Ojasvi Logo"
-              class="h-12 w-auto object-contain mt-1"
+              class="h-10 sm:h-12 w-auto object-contain mt-1"
             />
-
             <span
-              style="margin-left: 0px !important"
-              class="text-3xl text-primary font-semibold"
+              class="text-2xl sm:text-3xl text-primary font-semibold whitespace-nowrap"
               >Ojasvi</span
             >
           </a>
           <!-- Search Bar -->
-          <div class="hidden md:flex items-center w-1/2 relative">
+          <div
+            class="hidden md:flex items-center w-2/5 lg:w-1/2 relative min-w-0"
+          >
             <div class="absolute inset-y-0 left-0 flex items-center pl-3">
               <i class="ri-search-line text-gray-400"></i>
             </div>
             <input
               type="text"
               placeholder="Search for products..."
-              class="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-l-button focus:outline-none focus:ring-2 focus:ring-primary/50"
+              class="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-l-button focus:outline-none focus:ring-2 focus:ring-primary/50 text-sm"
             />
             <div class="relative">
               <select
-                class="appearance-none bg-gray-100 border-y border-r border-gray-200 rounded-r-button py-2 px-4 pr-8 focus:outline-none focus:ring-2 focus:ring-primary/50"
+                class="appearance-none bg-gray-100 border-y border-r border-gray-200 rounded-r-button py-2 px-4 pr-8 focus:outline-none focus:ring-2 focus:ring-primary/50 text-sm"
               >
                 <option>All Categories</option>
                 <option>Skin Care</option>
@@ -131,23 +260,16 @@
             </div>
           </div>
           <!-- Navigation Icons -->
-          <div class="flex items-center space-x-6">
-            <!-- <a
-              href="#"
-              class="w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary"
-            >
-              <i class="ri-user-line ri-lg"></i>
-            </a> -->
+          <div class="flex items-center space-x-3 sm:space-x-6">
             <a
               href="Reference-Material-Page.html"
-              class="w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary mt-[-4px]"
+              class="w-9 sm:w-10 h-9 sm:h-10 flex items-center justify-center text-gray-700 hover:text-primary mt-[-4px]"
             >
               <i class="ri-user-line ri-lg"></i>
             </a>
-
             <a
               href="favorites.html"
-              class="w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary relative"
+              class="w-9 sm:w-10 h-9 sm:h-10 flex items-center justify-center text-gray-700 hover:text-primary relative"
             >
               <i class="ri-heart-line ri-lg"></i>
               <span
@@ -157,7 +279,7 @@
             </a>
             <button
               id="cartButton"
-              class="w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary relative"
+              class="w-9 sm:w-10 h-9 sm:h-10 flex items-center justify-center text-gray-700 hover:text-primary relative"
             >
               <i class="ri-shopping-cart-line ri-lg"></i>
               <span
@@ -165,48 +287,11 @@
                 >2</span
               >
             </button>
-            <button
-              class="md:hidden w-10 h-10 flex items-center justify-center text-gray-700"
-            >
+            <!-- <button id="openMobileNav" class="md:hidden w-9 sm:w-10 h-9 sm:h-10 flex items-center justify-center text-gray-700 focus:outline-none">
               <i class="ri-menu-line ri-lg"></i>
-            </button>
+            </button> -->
           </div>
         </div>
-        <!-- Navigation Menu -->
-        <!-- <nav class="hidden md:flex mt-4 border-t border-gray-100 pt-4">
-          <ul class="flex space-x-8">
-            <li>
-              <a href="#" class="text-gray-800 hover:text-primary font-medium"
-                >Home</a
-              >
-            </li>
-            <li>
-              <a href="#" class="text-gray-800 hover:text-primary font-medium"
-                >Skin Care</a
-              >
-            </li>
-            <li>
-              <a href="#" class="text-gray-800 hover:text-primary font-medium"
-                >Hair Care</a
-              >
-            </li>
-            <li>
-              <a href="#" class="text-gray-800 hover:text-primary font-medium"
-                >New Arrivals</a
-              >
-            </li>
-            <li>
-              <a href="#" class="text-gray-800 hover:text-primary font-medium"
-                >Special Offers</a
-              >
-            </li>
-            <li>
-              <a href="#" class="text-gray-800 hover:text-primary font-medium"
-                >About Us</a
-              >
-            </li>
-          </ul>
-        </nav> -->
       </div>
     </header>
     <div
@@ -336,7 +421,10 @@
                 </div>
 
                 <button
+                  id="addToCartBtn"
                   class="w-full bg-primary text-white py-3 px-6 rounded-button font-medium hover:bg-green-700 transition whitespace-nowrap"
+                  data-product-name="Neem Face Cream"
+                  data-product-image="https://readdy.ai/api/search-image?query=Premium%20ayurvedic%20neem%20face%20cream%20jar%20with%20natural%20green%20packaging%2C%20clean%20white%20background%2C%20professional%20product%20photography%2C%20soft%20lighting%2C%20minimalist%20aesthetic%2C%20natural%20skincare%20product%2C%20organic%20cosmetics%2C%20glass%20jar%20with%20wooden%20lid&width=600&height=600&seq=neem-cream-main&orientation=squarish"
                 >
                   Add to Cart - ₹2430
                 </button>
@@ -808,93 +896,14 @@
           <div class="bg-white rounded-lg shadow-sm p-6 mb-8">
             <div class="flex justify-between items-center mb-6">
               <h2 class="text-lg font-semibold text-gray-800 flex items-center">
-                <!-- <div
-                    class="w-5 h-5 mr-2 flex items-center justify-center text-primary"
-                  >
-                    <i class="ri-eye-line"></i>
-                  </div> -->
                 Recently Viewed Products
               </h2>
-              <a href="#" class="text-primary text-sm hover:underline"
+              <!-- <a href="#" class="text-primary text-sm hover:underline"
                 >View All</a
-              >
+              > -->
             </div>
-
-            <!-- <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"> -->
-            <!-- <div
-                  class="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-shadow"
-                >
-                  <div class="h-48 overflow-hidden">
-                    <img
-                      src="https://readdy.ai/api/search-image?query=modern%20wireless%20earbuds%20with%20charging%20case%20on%20clean%20white%20background%2C%20professional%20product%20photography%2C%20high%20resolution%2C%20detailed&width=300&height=300&seq=4&orientation=squarish"
-                      alt="Wireless Earbuds"
-                      class="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div class="p-4">
-                    <h3 class="font-medium text-gray-800 mb-1">
-                      Premium Wireless Earbuds
-                    </h3>
-                    <p class="text-primary font-bold">$79.99</p>
-                  </div>
-                </div>
-
-                <div
-                  class="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-shadow"
-                >
-                  <div class="h-48 overflow-hidden">
-                    <img
-                      src="https://readdy.ai/api/search-image?query=minimalist%20smartwatch%20with%20leather%20band%20on%20clean%20white%20background%2C%20professional%20product%20photography%2C%20high%20resolution%2C%20detailed&width=300&height=300&seq=5&orientation=squarish"
-                      alt="Smartwatch"
-                      class="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div class="p-4">
-                    <h3 class="font-medium text-gray-800 mb-1">
-                      Fitness Smartwatch
-                    </h3>
-                    <p class="text-primary font-bold">$129.99</p>
-                  </div>
-                </div>
-
-                <div
-                  class="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-shadow"
-                >
-                  <div class="h-48 overflow-hidden">
-                    <img
-                      src="https://readdy.ai/api/search-image?query=portable%20bluetooth%20speaker%20on%20clean%20white%20background%2C%20professional%20product%20photography%2C%20high%20resolution%2C%20detailed&width=300&height=300&seq=6&orientation=squarish"
-                      alt="Bluetooth Speaker"
-                      class="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div class="p-4">
-                    <h3 class="font-medium text-gray-800 mb-1">
-                      Portable Bluetooth Speaker
-                    </h3>
-                    <p class="text-primary font-bold">$59.99</p>
-                  </div>
-                </div>
-
-               
-                <div
-                  class="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-shadow"
-                >
-                  <div class="h-48 overflow-hidden">
-                    <img
-                      src="https://readdy.ai/api/search-image?query=slim%20power%20bank%20with%20usb-c%20port%20on%20clean%20white%20background%2C%20professional%20product%20photography%2C%20high%20resolution%2C%20detailed&width=300&height=300&seq=7&orientation=squarish"
-                      alt="Power Bank"
-                      class="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div class="p-4">
-                    <h3 class="font-medium text-gray-800 mb-1">
-                      Fast Charging Power Bank
-                    </h3>
-                    <p class="text-primary font-bold">$45.50</p>
-                  </div>
-                </div> -->
             <div
-              class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+              class="you-may-also-like-scroll grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
             >
               <!-- Product 1 -->
               <div
@@ -1193,7 +1202,6 @@
                 </div>
               </div>
             </div>
-            <!-- </div> -->
           </div>
         </div>
       </section>
@@ -1209,6 +1217,33 @@
         event.target.classList.remove("border-transparent");
         event.target.classList.add("border-primary");
       }
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const addToCartBtn = document.getElementById("addToCartBtn");
+        const toast = document.getElementById("toastMessage");
+        const toastImage = document.getElementById("toastImage");
+        const toastProductName = document.getElementById("toastProductName");
+
+        addToCartBtn.addEventListener("click", function () {
+          // Hide button
+          addToCartBtn.style.display = "none";
+
+          // Set toast content
+          const productName = addToCartBtn.getAttribute("data-product-name");
+          const productImage = addToCartBtn.getAttribute("data-product-image");
+          toastProductName.textContent = productName;
+          toastImage.src = productImage;
+
+          // Show toast
+          toast.style.display = "block";
+
+          // Hide toast after 3 seconds
+          setTimeout(() => {
+            toast.style.display = "none";
+          }, 3000);
+        });
+      });
     </script>
 
     <script id="productDetailsScript">
@@ -1630,9 +1665,10 @@
     </script>
     <footer class="bg-white pt-16 pb-8">
       <div class="container mx-auto px-4">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-          <!-- About -->
-          <div>
+        <!-- Adjusted layout -->
+        <div class="flex flex-col lg:flex-row lg:justify-between gap-12 mb-12">
+          <!-- About (takes more width) -->
+          <div class="lg:w-2/3">
             <h3 class="text-xl font-bold text-gray-900 mb-4">About Ojasvi</h3>
             <p class="text-gray-600 mb-4">
               Ojasvi is dedicated to bringing the ancient wisdom of Ayurveda to
@@ -1666,70 +1702,16 @@
               </a>
             </div>
           </div>
-          <!-- Quick Links -->
-          <!-- <div>
-            <h3 class="text-xl font-bold text-gray-900 mb-4">Quick Links</h3>
-            <ul class="space-y-3">
-              <li>
-                <a href="#" class="text-gray-600 hover:text-primary">Home</a>
-              </li>
-              <li>
-                <a href="#" class="text-gray-600 hover:text-primary">Shop</a>
-              </li>
-              <li>
-                <a href="#" class="text-gray-600 hover:text-primary"
-                  >About Us</a
-                >
-              </li>
-              <li>
-                <a href="#" class="text-gray-600 hover:text-primary">Blog</a>
-              </li>
-              <li>
-                <a href="#" class="text-gray-600 hover:text-primary">Contact</a>
-              </li>
-            </ul>
-          </div> -->
-          <!-- Customer Service -->
-          <div>
-            <h3 class="text-xl font-bold text-gray-900 mb-4">
-              Customer Service
-            </h3>
-            <ul class="space-y-3">
-              <li>
-                <a href="#" class="text-gray-600 hover:text-primary"
-                  >My Account</a
-                >
-              </li>
-              <li>
-                <a href="#" class="text-gray-600 hover:text-primary"
-                  >Track Your Order</a
-                >
-              </li>
-              <li>
-                <a href="#" class="text-gray-600 hover:text-primary"
-                  >Shipping Policy</a
-                >
-              </li>
-              <li>
-                <a href="#" class="text-gray-600 hover:text-primary"
-                  >Returns & Exchanges</a
-                >
-              </li>
-              <li>
-                <a href="#" class="text-gray-600 hover:text-primary">FAQs</a>
-              </li>
-            </ul>
-          </div>
-          <!-- Contact -->
-          <div>
+
+          <!-- Contact (smaller width) -->
+          <div class="lg:w-1/3">
             <h3 class="text-xl font-bold text-gray-900 mb-4">Contact Us</h3>
             <ul class="space-y-3">
               <li class="flex items-start">
                 <i class="ri-map-pin-line text-primary mt-1 mr-3"></i>
-                <span class="text-gray-600"
-                  >123 Ayurveda Lane, Wellness District, Natural City,
-                  12345</span
-                >
+                <span class="text-gray-600">
+                  123 Ayurveda Lane, Wellness District, Natural City, 12345
+                </span>
               </li>
               <li class="flex items-center">
                 <i class="ri-phone-line text-primary mr-3"></i>
@@ -1746,6 +1728,7 @@
             </ul>
           </div>
         </div>
+
         <!-- Bottom Footer -->
         <div class="pt-8 border-t border-gray-200">
           <div class="flex flex-col md:flex-row justify-between items-center">

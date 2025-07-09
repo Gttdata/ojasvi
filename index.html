@@ -226,51 +226,242 @@
       input[type="number"] {
         -moz-appearance: textfield;
       }
+      @media (max-width: 1023px) {
+        .sidebar-filters-mobile {
+          display: block !important;
+        }
+        .sidebar-filters-desktop {
+          display: none !important;
+        }
+      }
+      @media (min-width: 1024px) {
+        .sidebar-filters-mobile {
+          display: none !important;
+        }
+        .sidebar-filters-desktop {
+          display: block !important;
+        }
+      }
+      @media (max-width: 767px) {
+        .product-card .btn-row {
+          flex-direction: column !important;
+          gap: 0.5rem !important;
+        }
+        .product-card .btn-row > * {
+          width: 100% !important;
+          min-width: 0 !important;
+          display: block !important;
+          text-align: center !important;
+        }
+        .product-card .details-btn {
+          margin-top: 0 !important;
+        }
+        .product-card .add-to-cart-btn {
+          margin-bottom: 0 !important;
+        }
+        .product-card .absolute.top-3.left-3 {
+          top: 0.5rem !important;
+          left: 0.5rem !important;
+          right: auto !important;
+          z-index: 2;
+        }
+        .product-card .absolute.top-3.right-3 {
+          top: 0.5rem !important;
+          right: 0.5rem !important;
+          left: auto !important;
+          z-index: 2;
+          flex-direction: row !important;
+          gap: 0.25rem !important;
+        }
+        .product-card .absolute.top-3.left-3 span,
+        .product-card .absolute.top-3.left-3 .badge {
+          display: inline-block;
+          margin-bottom: 0 !important;
+          margin-right: 0 !important;
+          margin-top: 0 !important;
+        }
+        .product-card .relative {
+          position: relative;
+          z-index: 1;
+        }
+      }
+      @media (max-width: 767px) {
+        .product-card .absolute.top-3.left-3 {
+          margin-bottom: 0.5rem;
+        }
+        .product-card .absolute.top-3.right-3 {
+          margin-top: 0.5rem;
+        }
+      }
+      @media (max-width: 425px) {
+        .product-card img {
+          height: 160px !important;
+          min-height: 120px;
+        }
+        .product-card .p-4 {
+          padding: 0.75rem !important;
+        }
+        .product-card .absolute.top-3.left-3 span,
+        .product-card .absolute.top-3.left-3 .badge {
+          font-size: 0.7rem !important;
+          padding: 0.1rem 0.4rem !important;
+        }
+        .product-card .absolute.top-3.right-3 button {
+          width: 2rem !important;
+          height: 2rem !important;
+        }
+      }
+      @media (max-width: 639px) {
+        .product-grid {
+          grid-template-columns: 1fr !important;
+        }
+      }
+      @media (min-width: 640px) and (max-width: 1023px) {
+        .product-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        }
+      }
+      @media (min-width: 1024px) {
+        .product-grid {
+          grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        }
+      }
+      @media (min-width: 1536px) {
+        .product-grid {
+          grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+        }
+      }
+      @media (max-width: 1023px) {
+        .filter-bar-responsive {
+          flex-direction: column !important;
+          align-items: stretch !important;
+          gap: 1rem !important;
+        }
+        .filter-bar-responsive > * {
+          width: 100% !important;
+        }
+        .filter-bar-responsive .flex.items-center.space-x-4 {
+          justify-content: flex-start !important;
+          gap: 1rem !important;
+        }
+      }
+      @media (max-width: 639px) {
+        .filter-bar-responsive .flex.items-center.space-x-4 {
+          flex-direction: column !important;
+          align-items: flex-start !important;
+          gap: 0.5rem !important;
+        }
+      }
+      html,
+      body {
+        max-width: 100vw;
+        overflow-x: hidden;
+      }
     </style>
   </head>
-  <body class="bg-gray-50">
+  <body class="bg-gray-50 overflow-x-hidden">
+    <!-- Mobile Nav Overlay & Drawer -->
+    <div
+      id="mobileNavOverlay"
+      class="fixed inset-0 bg-black bg-opacity-40 z-50 hidden md:hidden"
+    ></div>
+    <nav
+      id="mobileNavDrawer"
+      class="fixed top-0 left-0 h-full w-4/5 max-w-xs bg-white shadow-lg z-50 transform -translate-x-full transition-transform duration-300 md:hidden flex flex-col"
+    >
+      <div class="flex items-center justify-between px-6 py-4 border-b">
+        <span class="text-2xl font-bold text-primary">Ojasvi</span>
+        <button id="closeMobileNav" class="text-gray-500 hover:text-primary">
+          <i class="ri-close-line ri-lg"></i>
+        </button>
+      </div>
+      <ul class="flex-1 flex flex-col gap-2 px-6 py-4 text-lg">
+        <li>
+          <a
+            href="#"
+            class="block py-2 text-gray-800 hover:text-primary font-medium"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a
+            href="#"
+            class="block py-2 text-gray-800 hover:text-primary font-medium"
+            >Skin Care</a
+          >
+        </li>
+        <li>
+          <a
+            href="#"
+            class="block py-2 text-gray-800 hover:text-primary font-medium"
+            >Hair Care</a
+          >
+        </li>
+        <li>
+          <a
+            href="#"
+            class="block py-2 text-gray-800 hover:text-primary font-medium"
+            >New Arrivals</a
+          >
+        </li>
+        <li>
+          <a
+            href="#"
+            class="block py-2 text-gray-800 hover:text-primary font-medium"
+            >Special Offers</a
+          >
+        </li>
+        <li>
+          <a
+            href="#"
+            class="block py-2 text-gray-800 hover:text-primary font-medium"
+            >About Us</a
+          >
+        </li>
+      </ul>
+    </nav>
     <!-- Header -->
     <header class="sticky top-0 z-50 bg-white shadow-md">
       <!-- Top Bar -->
-      <div class="bg-gradient-to-r from-primary to-primary/80 text-white py-2">
-        <div class="container mx-auto px-4 flex justify-between items-center">
-          <p class="text-sm">Free shipping on orders over ₹2000</p>
-          <div class="flex items-center space-x-4">
-            <a href="#" class="text-sm hover:underline">Track Order</a>
-            <a href="#" class="text-sm hover:underline">Contact Us</a>
+      <!-- <div class="bg-gradient-to-r from-primary to-primary/80 text-white py-2 text-xs sm:text-sm">
+        <div class="container mx-auto px-2 sm:px-4 flex flex-col sm:flex-row justify-between items-center gap-1 sm:gap-0">
+          <p class="text-xs sm:text-sm">Free shipping on orders over ₹2000</p>
+          <div class="flex items-center space-x-2 sm:space-x-4">
+            <a href="#" class="text-xs sm:text-sm hover:underline">Track Order</a>
+            <a href="#" class="text-xs sm:text-sm hover:underline">Contact Us</a>
           </div>
         </div>
-      </div>
+      </div> -->
       <!-- Main Header -->
-      <div class="container mx-auto px-4 py-4">
-        <div class="flex items-center justify-between">
+      <div class="container mx-auto px-2 sm:px-4 py-3 sm:py-4">
+        <div class="flex items-center justify-between gap-2">
           <!-- Logo -->
-          <a href="index.html" class="flex items-center space-x-2">
+          <a href="index.html" class="flex items-center space-x-2 min-w-0">
             <img
               src="img/logo1.png"
               alt="Ojasvi Logo"
-              class="h-12 w-auto object-contain mt-1"
+              class="h-10 sm:h-12 w-auto object-contain mt-1"
             />
-
             <span
-              style="margin-left: 0px !important"
-              class="text-3xl text-primary font-semibold"
+              class="text-2xl sm:text-3xl text-primary font-semibold whitespace-nowrap"
               >Ojasvi</span
             >
           </a>
           <!-- Search Bar -->
-          <div class="hidden md:flex items-center w-1/2 relative">
+          <div
+            class="hidden md:flex items-center w-2/5 lg:w-1/2 relative min-w-0"
+          >
             <div class="absolute inset-y-0 left-0 flex items-center pl-3">
               <i class="ri-search-line text-gray-400"></i>
             </div>
             <input
               type="text"
               placeholder="Search for products..."
-              class="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-l-button focus:outline-none focus:ring-2 focus:ring-primary/50"
+              class="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-l-button focus:outline-none focus:ring-2 focus:ring-primary/50 text-sm"
             />
             <div class="relative">
               <select
-                class="appearance-none bg-gray-100 border-y border-r border-gray-200 rounded-r-button py-2 px-4 pr-8 focus:outline-none focus:ring-2 focus:ring-primary/50"
+                class="appearance-none bg-gray-100 border-y border-r border-gray-200 rounded-r-button py-2 px-4 pr-8 focus:outline-none focus:ring-2 focus:ring-primary/50 text-sm"
               >
                 <option>All Categories</option>
                 <option>Skin Care</option>
@@ -284,23 +475,16 @@
             </div>
           </div>
           <!-- Navigation Icons -->
-          <div class="flex items-center space-x-6">
-            <!-- <a
-              href="#"
-              class="w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary"
-            >
-              <i class="ri-user-line ri-lg"></i>
-            </a> -->
+          <div class="flex items-center space-x-3 sm:space-x-6">
             <a
               href="Reference-Material-Page.html"
-              class="w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary mt-[-4px]"
+              class="w-9 sm:w-10 h-9 sm:h-10 flex items-center justify-center text-gray-700 hover:text-primary mt-[-4px]"
             >
               <i class="ri-user-line ri-lg"></i>
             </a>
-
             <a
               href="favorites.html"
-              class="w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary relative"
+              class="w-9 sm:w-10 h-9 sm:h-10 flex items-center justify-center text-gray-700 hover:text-primary relative"
             >
               <i class="ri-heart-line ri-lg"></i>
               <span
@@ -308,10 +492,9 @@
                 >4</span
               >
             </a>
-
             <button
               id="cartButton"
-              class="w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary relative"
+              class="w-9 sm:w-10 h-9 sm:h-10 flex items-center justify-center text-gray-700 hover:text-primary relative"
             >
               <i class="ri-shopping-cart-line ri-lg"></i>
               <span
@@ -319,50 +502,38 @@
                 >2</span
               >
             </button>
-            <button
-              class="md:hidden w-10 h-10 flex items-center justify-center text-gray-700"
-            >
+            <!-- <button id="openMobileNav" class="md:hidden w-9 sm:w-10 h-9 sm:h-10 flex items-center justify-center text-gray-700 focus:outline-none">
               <i class="ri-menu-line ri-lg"></i>
-            </button>
+            </button> -->
           </div>
         </div>
-        <!-- Navigation Menu -->
-        <!-- <nav class="hidden md:flex mt-4 border-t border-gray-100 pt-4">
-          <ul class="flex space-x-8">
-            <li>
-              <a href="#" class="text-gray-800 hover:text-primary font-medium"
-                >Home</a
-              >
-            </li>
-            <li>
-              <a href="#" class="text-gray-800 hover:text-primary font-medium"
-                >Skin Care</a
-              >
-            </li>
-            <li>
-              <a href="#" class="text-gray-800 hover:text-primary font-medium"
-                >Hair Care</a
-              >
-            </li>
-            <li>
-              <a href="#" class="text-gray-800 hover:text-primary font-medium"
-                >New Arrivals</a
-              >
-            </li>
-            <li>
-              <a href="#" class="text-gray-800 hover:text-primary font-medium"
-                >Special Offers</a
-              >
-            </li>
-            <li>
-              <a href="#" class="text-gray-800 hover:text-primary font-medium"
-                >About Us</a
-              >
-            </li>
-          </ul>
-        </nav> -->
       </div>
     </header>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const openBtn = document.getElementById("openMobileNav");
+        const closeBtn = document.getElementById("closeMobileNav");
+        const drawer = document.getElementById("mobileNavDrawer");
+        const overlay = document.getElementById("mobileNavOverlay");
+        if (openBtn && closeBtn && drawer && overlay) {
+          openBtn.addEventListener("click", function () {
+            drawer.classList.remove("-translate-x-full");
+            overlay.classList.remove("hidden");
+            document.body.style.overflow = "hidden";
+          });
+          closeBtn.addEventListener("click", function () {
+            drawer.classList.add("-translate-x-full");
+            overlay.classList.add("hidden");
+            document.body.style.overflow = "auto";
+          });
+          overlay.addEventListener("click", function () {
+            drawer.classList.add("-translate-x-full");
+            overlay.classList.add("hidden");
+            document.body.style.overflow = "auto";
+          });
+        }
+      });
+    </script>
 
     <div
       id="toastMessage"
@@ -421,7 +592,7 @@
             Discover the ancient secrets of Ayurveda with our premium botanical
             skincare and haircare products. Handcrafted with love and tradition.
           </p>
-          <div class="flex flex-wrap gap-4">
+          <!-- <div class="flex flex-wrap gap-4">
             <a
               href="#"
               class="bg-primary text-white px-8 py-3 rounded-button font-medium hover:bg-primary/90 transition-colors !rounded-button whitespace-nowrap"
@@ -432,7 +603,7 @@
               class="bg-white border border-gray-300 text-gray-800 px-8 py-3 rounded-button font-medium hover:bg-gray-50 transition-colors !rounded-button whitespace-nowrap"
               >Learn More</a
             >
-          </div>
+          </div> -->
         </div>
       </div>
     </section>
@@ -497,10 +668,10 @@
           Our Featured Products
         </h2>
         <div class="flex flex-col lg:flex-row gap-8">
-          <!-- Sidebar Filters -->
-          <div class="lg:w-1/4">
+          <!-- Sidebar Filters: Desktop -->
+          <div class="lg:w-1/4 sidebar-filters-desktop">
             <div class="bg-white rounded-lg shadow-sm p-6 sticky top-32">
-              <h3 class="text-xl font-bold mb-6">Filters</h3>
+              <!-- <h3 class="text-xl font-bold mb-6">Filters</h3> -->
               <!-- Categories Filter -->
               <div class="mb-6">
                 <h4 class="font-medium text-gray-900 mb-3">Categories</h4>
@@ -650,11 +821,40 @@
               </button>
             </div>
           </div>
+          <!-- Sidebar Filters: Mobile/Tablet Drawer Trigger -->
+          <div class="w-full sidebar-filters-mobile mb-4" style="display: none">
+            <button
+              id="openFiltersMobile"
+              class="w-full bg-primary text-white py-3 rounded-button font-medium mb-2"
+            >
+              <i class="ri-filter-3-line mr-2"></i> Filters
+            </button>
+            <div
+              id="mobileFiltersDrawer"
+              class="fixed inset-0 z-50 bg-black bg-opacity-40 hidden"
+            >
+              <div
+                class="absolute top-0 left-0 w-4/5 max-w-xs h-full bg-white shadow-lg p-6 overflow-y-auto"
+              >
+                <div class="flex items-center justify-between mb-4">
+                  <h3 class="text-xl font-bold">Filters</h3>
+                  <button
+                    id="closeFiltersMobile"
+                    class="text-gray-500 hover:text-primary"
+                  >
+                    <i class="ri-close-line ri-lg"></i>
+                  </button>
+                </div>
+                <!-- Clone of filter content -->
+                <div id="mobileFiltersContent"></div>
+              </div>
+            </div>
+          </div>
           <!-- Product Grid -->
-          <div class="lg:w-3/4">
+          <div class="lg:w-3/4 w-full">
             <!-- Filter Bar -->
             <div
-              class="bg-white rounded-lg shadow-sm p-4 mb-6 flex flex-wrap items-center justify-between gap-4"
+              class="bg-white rounded-lg shadow-sm p-4 mb-6 flex flex-wrap items-center justify-between gap-4 filter-bar-responsive"
             >
               <div class="flex items-center">
                 <span class="text-gray-600 mr-2">Sort By:</span>
@@ -676,7 +876,7 @@
                 </div>
               </div>
               <div class="flex items-center space-x-4">
-                <div class="flex items-center">
+                <!-- <div class="flex items-center">
                   <button
                     class="w-10 h-10 flex items-center justify-center bg-primary text-white rounded-l-button"
                   >
@@ -687,12 +887,14 @@
                   >
                     <i class="ri-list-check"></i>
                   </button>
-                </div>
+                </div> -->
                 <span class="text-gray-600">Showing 1-9 of 42 products</span>
               </div>
             </div>
             <!-- Products Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div
+              class="grid product-grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+            >
               <!-- Product 1 -->
               <div
                 class="product-card bg-white rounded-lg shadow-sm overflow-hidden"
@@ -750,10 +952,8 @@
                     <button
                       class="flex-1 bg-primary text-white py-2 rounded-button font-medium hover:bg-primary/90 transition-colors !rounded-button whitespace-nowrap add-to-cart-btn"
                       data-product-id="1"
-                      onclick="showToast(
-'https://readdy.ai/api/search-image?query=Ayurvedic%20face%20cream%20in%20elegant%20glass%20jar%2C%20natural%20ingredients%20visible%2C%20professional%20product%20photography%2C%20soft%20lighting%2C%20minimalist%20style%2C%20clean%20background%2C%20high-end%20cosmetic%20product%20presentation&width=400&height=400&seq=product2&orientation=squarish',
-'Ayurvedic Fusion Face Cream'
-)"
+                      data-toast-image="https://readdy.ai/api/search-image?query=Ayurvedic%20face%20cream%20in%20elegant%20glass%20jar%2C%20natural%20ingredients%20visible%2C%20professional%20product%20photography%2C%20soft%20lighting%2C%20minimalist%20style%2C%20clean%20background%2C%20high-end%20cosmetic%20product%20presentation&width=400&height=400&seq=product2&orientation=squarish"
+                      data-toast-name="Ayurvedic Fusion Face Cream"
                     >
                       Add to Cart
                     </button>
@@ -824,12 +1024,10 @@
                     <button
                       class="flex-1 bg-primary text-white py-2 rounded-button font-medium hover:bg-primary/90 transition-colors !rounded-button whitespace-nowrap add-to-cart-btn"
                       data-product-id="2"
-                      onclick="showToast(
-'https://readdy.ai/api/search-image?query=Ayurvedic%20face%20cream%20in%20elegant%20glass%20jar%2C%20natural%20ingredients%20visible%2C%20professional%20product%20photography%2C%20soft%20lighting%2C%20minimalist%20style%2C%20clean%20background%2C%20high-end%20cosmetic%20product%20presentation&width=400&height=400&seq=product2&orientation=squarish',
-'Ayurvedic Fusion Face Cream'
-)"
+                      data-toast-image="https://readdy.ai/api/search-image?query=Ayurvedic%20face%20cream%20in%20elegant%20glass%20jar%2C%20natural%20ingredients%20visible%2C%20professional%20product%20photography%2C%20soft%20lighting%2C%20minimalist%20style%2C%20clean%20background%2C%20high-end%20cosmetic%20product%20presentation&width=400&height=400&seq=product2&orientation=squarish"
+                      data-toast-name="Ayurvedic Fusion Face Cream"
                     >
-                      Add to Cart
+                      Add to Cart ttt
                     </button>
                     <a
                       href="Ayurvedic-Neem-Face-Cream.html"
@@ -898,10 +1096,8 @@
                     <button
                       class="flex-1 bg-primary text-white py-2 rounded-button font-medium hover:bg-primary/90 transition-colors !rounded-button whitespace-nowrap add-to-cart-btn"
                       data-product-id="3"
-                      onclick="showToast(
-'https://readdy.ai/api/search-image?query=Ayurvedic%20face%20cream%20in%20elegant%20glass%20jar%2C%20natural%20ingredients%20visible%2C%20professional%20product%20photography%2C%20soft%20lighting%2C%20minimalist%20style%2C%20clean%20background%2C%20high-end%20cosmetic%20product%20presentation&width=400&height=400&seq=product2&orientation=squarish',
-'Ayurvedic Fusion Face Cream'
-)"
+                      data-toast-image="https://readdy.ai/api/search-image?query=Ayurvedic%20face%20cream%20in%20elegant%20glass%20jar%2C%20natural%20ingredients%20visible%2C%20professional%20product%20photography%2C%20soft%20lighting%2C%20minimalist%20style%2C%20clean%20background%2C%20high-end%20cosmetic%20product%20presentation&width=400&height=400&seq=product2&orientation=squarish"
+                      data-toast-name="Ayurvedic Fusion Face Cream"
                     >
                       Add to Cart
                     </button>
@@ -967,10 +1163,8 @@
                     <button
                       class="flex-1 bg-primary text-white py-2 rounded-button font-medium hover:bg-primary/90 transition-colors !rounded-button whitespace-nowrap add-to-cart-btn"
                       data-product-id="4"
-                      onclick="showToast(
-'https://readdy.ai/api/search-image?query=Ayurvedic%20face%20cream%20in%20elegant%20glass%20jar%2C%20natural%20ingredients%20visible%2C%20professional%20product%20photography%2C%20soft%20lighting%2C%20minimalist%20style%2C%20clean%20background%2C%20high-end%20cosmetic%20product%20presentation&width=400&height=400&seq=product2&orientation=squarish',
-'Ayurvedic Fusion Face Cream'
-)"
+                      data-toast-image="https://readdy.ai/api/search-image?query=Ayurvedic%20face%20cream%20in%20elegant%20glass%20jar%2C%20natural%20ingredients%20visible%2C%20professional%20product%20photography%2C%20soft%20lighting%2C%20minimalist%20style%2C%20clean%20background%2C%20high-end%20cosmetic%20product%20presentation&width=400&height=400&seq=product2&orientation=squarish"
+                      data-toast-name="Ayurvedic Fusion Face Cream"
                     >
                       Add to Cart
                     </button>
@@ -1046,10 +1240,8 @@
                     <button
                       class="flex-1 bg-primary text-white py-2 rounded-button font-medium hover:bg-primary/90 transition-colors !rounded-button whitespace-nowrap add-to-cart-btn"
                       data-product-id="6"
-                      onclick="showToast(
-'https://readdy.ai/api/search-image?query=Ayurvedic%20face%20cream%20in%20elegant%20glass%20jar%2C%20natural%20ingredients%20visible%2C%20professional%20product%20photography%2C%20soft%20lighting%2C%20minimalist%20style%2C%20clean%20background%2C%20high-end%20cosmetic%20product%20presentation&width=400&height=400&seq=product2&orientation=squarish',
-'Ayurvedic Fusion Face Cream'
-)"
+                      data-toast-image="https://readdy.ai/api/search-image?query=Ayurvedic%20face%20cream%20in%20elegant%20glass%20jar%2C%20natural%20ingredients%20visible%2C%20professional%20product%20photography%2C%20soft%20lighting%2C%20minimalist%20style%2C%20clean%20background%2C%20high-end%20cosmetic%20product%20presentation&width=400&height=400&seq=product2&orientation=squarish"
+                      data-toast-name="Ayurvedic Fusion Face Cream"
                     >
                       Add to Cart
                     </button>
@@ -1115,232 +1307,8 @@
                     <button
                       class="flex-1 bg-primary text-white py-2 rounded-button font-medium hover:bg-primary/90 transition-colors !rounded-button whitespace-nowrap add-to-cart-btn"
                       data-product-id="7"
-                      onclick="showToast(
-'https://readdy.ai/api/search-image?query=Ayurvedic%20face%20cream%20in%20elegant%20glass%20jar%2C%20natural%20ingredients%20visible%2C%20professional%20product%20photography%2C%20soft%20lighting%2C%20minimalist%20style%2C%20clean%20background%2C%20high-end%20cosmetic%20product%20presentation&width=400&height=400&seq=product2&orientation=squarish',
-'Ayurvedic Fusion Face Cream'
-)"
-                    >
-                      Add to Cart
-                    </button>
-                    <a
-                      href="Ayurvedic-Neem-Face-Cream.html"
-                      class="product-details-link details-btn bg-gray-100 text-gray-800 px-4 py-2 rounded-button font-medium hover:bg-gray-200 transition-colors whitespace-nowrap"
-                      data-product="1"
-                      data-allow-navigation="true"
-                    >
-                      Details
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <!-- Product 7 -->
-              <div
-                class="product-card bg-white rounded-lg shadow-sm overflow-hidden"
-              >
-                <div class="relative">
-                  <img
-                    src="https://readdy.ai/api/search-image?query=Ayurvedic%20lip%20balm%20in%20elegant%20packaging%2C%20natural%20ingredients%20visible%2C%20professional%20product%20photography%2C%20soft%20lighting%2C%20minimalist%20style%2C%20clean%20background%2C%20high-end%20cosmetic%20product%20presentation&width=400&height=400&seq=product7&orientation=squarish"
-                    alt="Herbal Lip Balm"
-                    class="w-full h-64 object-cover object-top"
-                  />
-                  <div class="absolute top-3 right-3 flex space-x-2">
-                    <button
-                      class="w-8 h-8 flex items-center justify-center bg-white rounded-full shadow-sm text-gray-600 hover:text-primary"
-                    >
-                      <i class="ri-heart-line"></i>
-                    </button>
-                    <button
-                      class="w-8 h-8 flex items-center justify-center bg-white rounded-full shadow-sm text-gray-600 hover:text-primary product-quick-view"
-                      data-product="7"
-                    >
-                      <i class="ri-eye-line"></i>
-                    </button>
-                  </div>
-                  <div class="absolute top-3 left-3">
-                    <span
-                      class="bg-secondary/90 text-white text-xs px-2 py-1 rounded"
-                      >Bestseller</span
-                    >
-                  </div>
-                </div>
-                <div class="p-4">
-                  <span class="text-xs text-gray-500">Skin Care</span>
-                  <h3 class="text-lg font-medium text-gray-900 mt-1">
-                    Herbal Lip Balm
-                  </h3>
-                  <p class="text-sm text-gray-600 mt-2 line-clamp-2">
-                    A nourishing lip balm with kokum butter, almond oil, and
-                    rose to heal, protect, and soften dry, chapped lips.
-                  </p>
-                  <div class="flex items-center justify-between mt-4">
-                    <span class="text-primary font-medium">₹1010</span>
-                    <div class="flex items-center">
-                      <div class="flex text-yellow-400">
-                        <i class="ri-star-fill"></i>
-                        <i class="ri-star-fill"></i>
-                        <i class="ri-star-fill"></i>
-                        <i class="ri-star-fill"></i>
-                        <i class="ri-star-half-fill"></i>
-                      </div>
-                      <span class="text-xs text-gray-500 ml-1">(56)</span>
-                    </div>
-                  </div>
-                  <div class="mt-4 flex space-x-2 btn-row">
-                    <button
-                      class="flex-1 bg-primary text-white py-2 rounded-button font-medium hover:bg-primary/90 transition-colors !rounded-button whitespace-nowrap add-to-cart-btn"
-                      data-product-id="8"
-                      onclick="showToast(
-'https://readdy.ai/api/search-image?query=Ayurvedic%20face%20cream%20in%20elegant%20glass%20jar%2C%20natural%20ingredients%20visible%2C%20professional%20product%20photography%2C%20soft%20lighting%2C%20minimalist%20style%2C%20clean%20background%2C%20high-end%20cosmetic%20product%20presentation&width=400&height=400&seq=product2&orientation=squarish',
-'Ayurvedic Fusion Face Cream'
-)"
-                    >
-                      Add to Cart
-                    </button>
-                    <a
-                      href="Ayurvedic-Neem-Face-Cream.html"
-                      class="product-details-link details-btn bg-gray-100 text-gray-800 px-4 py-2 rounded-button font-medium hover:bg-gray-200 transition-colors whitespace-nowrap"
-                      data-product="1"
-                      data-allow-navigation="true"
-                    >
-                      Details
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <!-- Product 8 -->
-              <div
-                class="product-card bg-white rounded-lg shadow-sm overflow-hidden"
-              >
-                <div class="relative">
-                  <img
-                    src="https://readdy.ai/api/search-image?query=Ayurvedic%20hair%20serum%20in%20elegant%20glass%20bottle%2C%20natural%20ingredients%20visible%2C%20professional%20product%20photography%2C%20soft%20lighting%2C%20minimalist%20style%2C%20clean%20background%2C%20high-end%20cosmetic%20product%20presentation&width=400&height=400&seq=product8&orientation=squarish"
-                    alt="Bhringraj Hair Serum"
-                    class="w-full h-64 object-cover object-top"
-                  />
-                  <div class="absolute top-3 right-3 flex space-x-2">
-                    <button
-                      class="w-8 h-8 flex items-center justify-center bg-white rounded-full shadow-sm text-gray-600 hover:text-primary"
-                    >
-                      <i class="ri-heart-line"></i>
-                    </button>
-                    <button
-                      class="w-8 h-8 flex items-center justify-center bg-white rounded-full shadow-sm text-gray-600 hover:text-primary product-quick-view"
-                      data-product="8"
-                    >
-                      <i class="ri-eye-line"></i>
-                    </button>
-                  </div>
-                  <div class="absolute top-3 left-3">
-                    <span
-                      class="bg-primary/90 text-white text-xs px-2 py-1 rounded"
-                      >New</span
-                    >
-                  </div>
-                </div>
-                <div class="p-4">
-                  <span class="text-xs text-gray-500">Hair Care</span>
-                  <h3 class="text-lg font-medium text-gray-900 mt-1">
-                    Bhringraj Hair Serum
-                  </h3>
-                  <p class="text-sm text-gray-600 mt-2 line-clamp-2">
-                    A lightweight, non-greasy serum with bhringraj and rosemary
-                    to reduce hair fall, strengthen hair, and boost shine.
-                  </p>
-                  <div class="flex items-center justify-between mt-4">
-                    <span class="text-primary font-medium">₹2330</span>
-                    <div class="flex items-center">
-                      <div class="flex text-yellow-400">
-                        <i class="ri-star-fill"></i>
-                        <i class="ri-star-fill"></i>
-                        <i class="ri-star-fill"></i>
-                        <i class="ri-star-fill"></i>
-                        <i class="ri-star-line"></i>
-                      </div>
-                      <span class="text-xs text-gray-500 ml-1">(18)</span>
-                    </div>
-                  </div>
-                  <div class="mt-4 flex space-x-2 btn-row">
-                    <button
-                      class="flex-1 bg-primary text-white py-2 rounded-button font-medium hover:bg-primary/90 transition-colors !rounded-button whitespace-nowrap add-to-cart-btn"
-                      data-product-id="9"
-                      onclick="showToast(
-'https://readdy.ai/api/search-image?query=Ayurvedic%20face%20cream%20in%20elegant%20glass%20jar%2C%20natural%20ingredients%20visible%2C%20professional%20product%20photography%2C%20soft%20lighting%2C%20minimalist%20style%2C%20clean%20background%2C%20high-end%20cosmetic%20product%20presentation&width=400&height=400&seq=product2&orientation=squarish',
-'Ayurvedic Fusion Face Cream'
-)"
-                    >
-                      Add to Cart
-                    </button>
-                    <a
-                      href="Ayurvedic-Neem-Face-Cream.html"
-                      class="product-details-link details-btn bg-gray-100 text-gray-800 px-4 py-2 rounded-button font-medium hover:bg-gray-200 transition-colors whitespace-nowrap"
-                      data-product="1"
-                      data-allow-navigation="true"
-                    >
-                      Details
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <!-- Product 9 -->
-              <div
-                class="product-card bg-white rounded-lg shadow-sm overflow-hidden"
-              >
-                <div class="relative">
-                  <img
-                    src="https://readdy.ai/api/search-image?query=Ayurvedic%20face%20toner%20in%20elegant%20glass%20bottle%2C%20natural%20ingredients%20visible%2C%20professional%20product%20photography%2C%20soft%20lighting%2C%20minimalist%20style%2C%20clean%20background%2C%20high-end%20cosmetic%20product%20presentation&width=400&height=400&seq=product9&orientation=squarish"
-                    alt="Rose Water Toner"
-                    class="w-full h-64 object-cover object-top"
-                  />
-                  <div class="absolute top-3 right-3 flex space-x-2">
-                    <button
-                      class="w-8 h-8 flex items-center justify-center bg-white rounded-full shadow-sm text-gray-600 hover:text-primary"
-                    >
-                      <i class="ri-heart-line"></i>
-                    </button>
-                    <button
-                      class="w-8 h-8 flex items-center justify-center bg-white rounded-full shadow-sm text-gray-600 hover:text-primary product-quick-view"
-                      data-product="9"
-                    >
-                      <i class="ri-eye-line"></i>
-                    </button>
-                  </div>
-                  <div class="absolute top-3 left-3">
-                    <span
-                      class="bg-green-500/90 text-white text-xs px-2 py-1 rounded"
-                      >Organic</span
-                    >
-                  </div>
-                </div>
-                <div class="p-4">
-                  <span class="text-xs text-gray-500">Skin Care</span>
-                  <h3 class="text-lg font-medium text-gray-900 mt-1">
-                    Rose Water Toner
-                  </h3>
-                  <p class="text-sm text-gray-600 mt-2 line-clamp-2">
-                    A pure, steam-distilled rose water toner to balance pH,
-                    hydrate skin, and reduce redness and inflammation.
-                  </p>
-                  <div class="flex items-center justify-between mt-4">
-                    <span class="text-primary font-medium">₹3299</span>
-                    <div class="flex items-center">
-                      <div class="flex text-yellow-400">
-                        <i class="ri-star-fill"></i>
-                        <i class="ri-star-fill"></i>
-                        <i class="ri-star-fill"></i>
-                        <i class="ri-star-fill"></i>
-                        <i class="ri-star-fill"></i>
-                      </div>
-                      <span class="text-xs text-gray-500 ml-1">(39)</span>
-                    </div>
-                  </div>
-                  <div class="mt-4 flex space-x-2 btn-row">
-                    <button
-                      class="flex-1 bg-primary text-white py-2 rounded-button font-medium hover:bg-primary/90 transition-colors !rounded-button whitespace-nowrap add-to-cart-btn"
-                      data-product-id="10"
-                      onclick="showToast(
-'https://readdy.ai/api/search-image?query=Ayurvedic%20face%20cream%20in%20elegant%20glass%20jar%2C%20natural%20ingredients%20visible%2C%20professional%20product%20photography%2C%20soft%20lighting%2C%20minimalist%20style%2C%20clean%20background%2C%20high-end%20cosmetic%20product%20presentation&width=400&height=400&seq=product2&orientation=squarish',
-'Ayurvedic Fusion Face Cream'
-)"
+                      data-toast-image="https://readdy.ai/api/search-image?query=Ayurvedic%20face%20cream%20in%20elegant%20glass%20jar%2C%20natural%20ingredients%20visible%2C%20professional%20product%20photography%2C%20soft%20lighting%2C%20minimalist%20style%2C%20clean%20background%2C%20high-end%20cosmetic%20product%20presentation&width=400&height=400&seq=product2&orientation=squarish"
+                      data-toast-name="Ayurvedic Fusion Face Cream"
                     >
                       Add to Cart
                     </button>
@@ -1427,12 +1395,12 @@
       </div>
     </section>
 
-    <!-- Footer -->
     <footer class="bg-white pt-16 pb-8">
       <div class="container mx-auto px-4">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-          <!-- About -->
-          <div>
+        <!-- Adjusted layout -->
+        <div class="flex flex-col lg:flex-row lg:justify-between gap-12 mb-12">
+          <!-- About (takes more width) -->
+          <div class="lg:w-2/3">
             <h3 class="text-xl font-bold text-gray-900 mb-4">About Ojasvi</h3>
             <p class="text-gray-600 mb-4">
               Ojasvi is dedicated to bringing the ancient wisdom of Ayurveda to
@@ -1466,70 +1434,16 @@
               </a>
             </div>
           </div>
-          <!-- Quick Links -->
-          <!-- <div>
-            <h3 class="text-xl font-bold text-gray-900 mb-4">Quick Links</h3>
-            <ul class="space-y-3">
-              <li>
-                <a href="#" class="text-gray-600 hover:text-primary">Home</a>
-              </li>
-              <li>
-                <a href="#" class="text-gray-600 hover:text-primary">Shop</a>
-              </li>
-              <li>
-                <a href="#" class="text-gray-600 hover:text-primary"
-                  >About Us</a
-                >
-              </li>
-              <li>
-                <a href="#" class="text-gray-600 hover:text-primary">Blog</a>
-              </li>
-              <li>
-                <a href="#" class="text-gray-600 hover:text-primary">Contact</a>
-              </li>
-            </ul>
-          </div> -->
-          <!-- Customer Service -->
-          <div>
-            <h3 class="text-xl font-bold text-gray-900 mb-4">
-              Customer Service
-            </h3>
-            <ul class="space-y-3">
-              <li>
-                <a href="#" class="text-gray-600 hover:text-primary"
-                  >My Account</a
-                >
-              </li>
-              <li>
-                <a href="#" class="text-gray-600 hover:text-primary"
-                  >Track Your Order</a
-                >
-              </li>
-              <li>
-                <a href="#" class="text-gray-600 hover:text-primary"
-                  >Shipping Policy</a
-                >
-              </li>
-              <li>
-                <a href="#" class="text-gray-600 hover:text-primary"
-                  >Returns & Exchanges</a
-                >
-              </li>
-              <li>
-                <a href="#" class="text-gray-600 hover:text-primary">FAQs</a>
-              </li>
-            </ul>
-          </div>
-          <!-- Contact -->
-          <div>
+
+          <!-- Contact (smaller width) -->
+          <div class="lg:w-1/3">
             <h3 class="text-xl font-bold text-gray-900 mb-4">Contact Us</h3>
             <ul class="space-y-3">
               <li class="flex items-start">
                 <i class="ri-map-pin-line text-primary mt-1 mr-3"></i>
-                <span class="text-gray-600"
-                  >123 Ayurveda Lane, Wellness District, Natural City,
-                  12345</span
-                >
+                <span class="text-gray-600">
+                  123 Ayurveda Lane, Wellness District, Natural City, 12345
+                </span>
               </li>
               <li class="flex items-center">
                 <i class="ri-phone-line text-primary mr-3"></i>
@@ -1546,6 +1460,7 @@
             </ul>
           </div>
         </div>
+
         <!-- Bottom Footer -->
         <div class="pt-8 border-t border-gray-200">
           <div class="flex flex-col md:flex-row justify-between items-center">
@@ -2364,12 +2279,14 @@
         let addedToCart = JSON.parse(
           sessionStorage.getItem("addedToCartProducts") || "[]"
         );
+
         document.querySelectorAll(".add-to-cart-btn").forEach(function (btn) {
           const pid = btn.getAttribute("data-product-id");
           const btnRow = btn.closest(".btn-row");
           const detailsBtn = btnRow
             ? btnRow.querySelector(".details-btn")
             : null;
+
           function showDetailsFullWidth() {
             if (btnRow) btnRow.classList.remove("space-x-2");
             if (detailsBtn) {
@@ -2379,11 +2296,20 @@
               detailsBtn.style.display = "block";
             }
           }
+
+          // Hide button if already added
           if (addedToCart.includes(pid)) {
-            btn.style.display = "none";
+            btn.style.setProperty("display", "none", "important");
             showDetailsFullWidth();
           }
+
           btn.addEventListener("click", function () {
+            // Show toast
+            const img = btn.getAttribute("data-toast-image");
+            const name = btn.getAttribute("data-toast-name");
+            if (typeof showToast === "function") showToast(img, name);
+
+            // Update session storage
             if (!addedToCart.includes(pid)) {
               addedToCart.push(pid);
               sessionStorage.setItem(
@@ -2391,10 +2317,52 @@
                 JSON.stringify(addedToCart)
               );
             }
-            btn.style.display = "none";
+
+            // Force reflow and hide button with !important
+            btn.offsetHeight; // Trigger reflow
+            btn.style.setProperty("display", "none", "important");
             showDetailsFullWidth();
           });
         });
+      });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Mobile filter drawer logic
+        const openBtn = document.getElementById("openFiltersMobile");
+        const closeBtn = document.getElementById("closeFiltersMobile");
+        const drawer = document.getElementById("mobileFiltersDrawer");
+        const mobileFiltersContent = document.getElementById(
+          "mobileFiltersContent"
+        );
+        const desktopFilters = document.querySelector(
+          ".sidebar-filters-desktop .bg-white"
+        );
+        if (
+          openBtn &&
+          closeBtn &&
+          drawer &&
+          mobileFiltersContent &&
+          desktopFilters
+        ) {
+          openBtn.addEventListener("click", function () {
+            // Clone desktop filters into mobile drawer
+            mobileFiltersContent.innerHTML = desktopFilters.innerHTML;
+            drawer.classList.remove("hidden");
+            document.body.style.overflow = "hidden";
+          });
+          closeBtn.addEventListener("click", function () {
+            drawer.classList.add("hidden");
+            document.body.style.overflow = "auto";
+          });
+          drawer.addEventListener("click", function (e) {
+            if (e.target === drawer) {
+              drawer.classList.add("hidden");
+              document.body.style.overflow = "auto";
+            }
+          });
+        }
       });
     </script>
   </body>
