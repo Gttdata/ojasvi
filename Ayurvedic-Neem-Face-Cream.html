@@ -67,7 +67,7 @@
         scroll-behavior: smooth;
       }
       .accordion-content {
-        max-height: 0;
+        max-height: 200px;
         overflow: hidden;
         transition: max-height 0.3s ease;
       }
@@ -1296,27 +1296,29 @@
       }
     </script>
 
-    <script id="accordion-functionality">
+    <script>
       function toggleAccordion(button) {
         const content = button.nextElementSibling;
         const icon = button.querySelector(".accordion-icon");
 
-        if (content.classList.contains("active")) {
-          content.classList.remove("active");
-          icon.className = "ri-add-line accordion-icon";
+        if (content.style.display === "none" || !content.style.display) {
+          content.style.display = "block";
+          icon.classList.remove("ri-add-line");
+          icon.classList.add("ri-subtract-line");
         } else {
-          document.querySelectorAll(".accordion-content").forEach((item) => {
-            item.classList.remove("active");
-          });
-          document.querySelectorAll(".accordion-icon").forEach((item) => {
-            item.className = "ri-add-line accordion-icon";
-          });
-
-          content.classList.add("active");
-          icon.className = "ri-subtract-line accordion-icon";
+          content.style.display = "none";
+          icon.classList.remove("ri-subtract-line");
+          icon.classList.add("ri-add-line");
         }
       }
+
+      // Start with all accordions collapsed
+      window.onload = function () {
+        const allContents = document.querySelectorAll(".accordion-content");
+        allContents.forEach((content) => (content.style.display = "none"));
+      };
     </script>
+
     <!-- Cart Sidebar -->
     <div
       id="cartSidebar"
