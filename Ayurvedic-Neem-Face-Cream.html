@@ -1,0 +1,1768 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ayurvedic Neem Face Cream - Natural Beauty Products</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#2E7D32",
+              secondary: "#A5D6A7",
+            },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      :where([class^="ri-"])::before {
+        content: "\f3c2";
+      }
+      .tab-content {
+        display: none;
+      }
+      .tab-content.active {
+        display: block;
+      }
+      .tab-button.active {
+        color: #2e7d32;
+        border-bottom: 2px solid #2e7d32;
+      }
+      .image-zoom {
+        transition: transform 0.3s ease;
+      }
+      .image-zoom:hover {
+        transform: scale(1.1);
+      }
+      .sticky-cart {
+        position: sticky;
+        top: 2rem;
+      }
+      .carousel-container {
+        scroll-behavior: smooth;
+      }
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+      }
+      .accordion-content.active {
+        max-height: 200px;
+      }
+    </style>
+  </head>
+  <body class="bg-white">
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+      <!-- Top Bar -->
+      <div class="bg-gradient-to-r from-primary to-primary/80 text-white py-2">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+          <p class="text-sm">Free shipping on orders over ₹2000</p>
+          <div class="flex items-center space-x-4">
+            <a href="#" class="text-sm hover:underline">Track Order</a>
+            <a href="#" class="text-sm hover:underline">Contact Us</a>
+          </div>
+        </div>
+      </div>
+      <!-- Main Header -->
+      <div class="container mx-auto px-4 py-4">
+        <div class="flex items-center justify-between">
+          <!-- Logo -->
+          <a href="index.html" class="flex items-center space-x-2">
+            <img
+              src="img/logo1.png"
+              alt="Ojasvi Logo"
+              class="h-12 w-auto object-contain mt-1"
+            />
+
+            <span
+              style="margin-left: 0px !important"
+              class="text-3xl text-primary font-semibold"
+              >Ojasvi</span
+            >
+          </a>
+          <!-- Search Bar -->
+          <div class="hidden md:flex items-center w-1/2 relative">
+            <div class="absolute inset-y-0 left-0 flex items-center pl-3">
+              <i class="ri-search-line text-gray-400"></i>
+            </div>
+            <input
+              type="text"
+              placeholder="Search for products..."
+              class="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-l-button focus:outline-none focus:ring-2 focus:ring-primary/50"
+            />
+            <div class="relative">
+              <select
+                class="appearance-none bg-gray-100 border-y border-r border-gray-200 rounded-r-button py-2 px-4 pr-8 focus:outline-none focus:ring-2 focus:ring-primary/50"
+              >
+                <option>All Categories</option>
+                <option>Skin Care</option>
+                <option>Hair Care</option>
+              </select>
+              <div
+                class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none"
+              >
+                <i class="ri-arrow-down-s-line text-gray-400"></i>
+              </div>
+            </div>
+          </div>
+          <!-- Navigation Icons -->
+          <div class="flex items-center space-x-6">
+            <!-- <a
+              href="#"
+              class="w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary"
+            >
+              <i class="ri-user-line ri-lg"></i>
+            </a> -->
+            <a
+              href="Reference-Material-Page.html"
+              class="w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary mt-[-4px]"
+            >
+              <i class="ri-user-line ri-lg"></i>
+            </a>
+
+            <a
+              href="favorites.html"
+              class="w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary relative"
+            >
+              <i class="ri-heart-line ri-lg"></i>
+              <span
+                class="absolute -top-1 -right-1 bg-primary text-white text-xs rounded-full w-5 h-5 flex items-center justify-center"
+                >4</span
+              >
+            </a>
+            <button
+              id="cartButton"
+              class="w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary relative"
+            >
+              <i class="ri-shopping-cart-line ri-lg"></i>
+              <span
+                class="absolute -top-1 -right-1 bg-primary text-white text-xs rounded-full w-5 h-5 flex items-center justify-center"
+                >2</span
+              >
+            </button>
+            <button
+              class="md:hidden w-10 h-10 flex items-center justify-center text-gray-700"
+            >
+              <i class="ri-menu-line ri-lg"></i>
+            </button>
+          </div>
+        </div>
+        <!-- Navigation Menu -->
+        <!-- <nav class="hidden md:flex mt-4 border-t border-gray-100 pt-4">
+          <ul class="flex space-x-8">
+            <li>
+              <a href="#" class="text-gray-800 hover:text-primary font-medium"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a href="#" class="text-gray-800 hover:text-primary font-medium"
+                >Skin Care</a
+              >
+            </li>
+            <li>
+              <a href="#" class="text-gray-800 hover:text-primary font-medium"
+                >Hair Care</a
+              >
+            </li>
+            <li>
+              <a href="#" class="text-gray-800 hover:text-primary font-medium"
+                >New Arrivals</a
+              >
+            </li>
+            <li>
+              <a href="#" class="text-gray-800 hover:text-primary font-medium"
+                >Special Offers</a
+              >
+            </li>
+            <li>
+              <a href="#" class="text-gray-800 hover:text-primary font-medium"
+                >About Us</a
+              >
+            </li>
+          </ul>
+        </nav> -->
+      </div>
+    </header>
+    <div
+      id="toastMessage"
+      style="
+        position: fixed;
+        top: 40px;
+        right: 20px;
+        background-color: white;
+        color: #15803d;
+        border: 1px solid #bbf7d0;
+        padding: 10px 12px;
+        border-radius: 10px;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+        display: none;
+        z-index: 9999;
+        width: 360px;
+        font-family: sans-serif;
+      "
+    >
+      <div class="flex items-center space-x-3">
+        <img
+          id="toastImage"
+          src=""
+          alt="Product"
+          style="
+            width: 52px;
+            height: 52px;
+            object-fit: cover;
+            border-radius: 6px;
+          "
+        />
+        <div>
+          <p
+            id="toastProductName"
+            style="font-weight: 600; margin-bottom: 2px; font-size: 16px"
+          >
+            Product Name
+          </p>
+          <p style="font-size: 13px; color: black">
+            Successfully added to cart
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+        <div class="space-y-4">
+          <div class="relative overflow-hidden rounded-lg bg-gray-50">
+            <img
+              id="main-image"
+              src="https://readdy.ai/api/search-image?query=Premium%20ayurvedic%20neem%20face%20cream%20jar%20with%20natural%20green%20packaging%2C%20clean%20white%20background%2C%20professional%20product%20photography%2C%20soft%20lighting%2C%20minimalist%20aesthetic%2C%20natural%20skincare%20product%2C%20organic%20cosmetics%2C%20glass%20jar%20with%20wooden%20lid&width=600&height=600&seq=neem-cream-main&orientation=squarish"
+              alt="Ayurvedic Neem Face Cream"
+              class="w-full h-96 object-cover image-zoom"
+            />
+          </div>
+          <div class="flex space-x-2">
+            <img
+              src="https://readdy.ai/api/search-image?query=Ayurvedic%20neem%20face%20cream%20jar%20side%20angle%20view%2C%20natural%20green%20packaging%2C%20clean%20white%20background%2C%20professional%20product%20photography%2C%20minimalist%20aesthetic&width=120&height=120&seq=neem-cream-side&orientation=squarish"
+              alt="Side view"
+              class="w-20 h-20 object-cover rounded cursor-pointer border-2 border-transparent hover:border-primary thumbnail"
+              onclick="changeMainImage(this.src)"
+            />
+            <img
+              src="https://readdy.ai/api/search-image?query=Ayurvedic%20neem%20face%20cream%20jar%20top%20view%20showing%20cream%20texture%2C%20natural%20green%20packaging%2C%20clean%20white%20background%2C%20professional%20product%20photography&width=120&height=120&seq=neem-cream-top&orientation=squarish"
+              alt="Top view"
+              class="w-20 h-20 object-cover rounded cursor-pointer border-2 border-transparent hover:border-primary thumbnail"
+              onclick="changeMainImage(this.src)"
+            />
+            <img
+              src="https://readdy.ai/api/search-image?query=Ayurvedic%20neem%20face%20cream%20ingredients%20display%20with%20fresh%20neem%20leaves%2C%20turmeric%20powder%2C%20natural%20herbs%2C%20clean%20white%20background%2C%20organic%20skincare&width=120&height=120&seq=neem-ingredients&orientation=squarish"
+              alt="Ingredients"
+              class="w-20 h-20 object-cover rounded cursor-pointer border-2 border-transparent hover:border-primary thumbnail"
+              onclick="changeMainImage(this.src)"
+            />
+          </div>
+        </div>
+
+        <div class="space-y-6">
+          <div class="sticky-cart">
+            <div class="space-y-4">
+              <h1 class="text-3xl font-bold text-gray-900">
+                Ayurvedic Neem Face Cream
+              </h1>
+              <div class="flex items-center space-x-2">
+                <div class="flex text-yellow-400">
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-half-fill"></i>
+                </div>
+                <span class="text-gray-600">(127 reviews)</span>
+              </div>
+              <div class="flex items-center space-x-4">
+                <span class="text-3xl font-bold text-primary">₹2430</span>
+                <span class="text-xl text-gray-500 line-through">₹2930</span>
+                <span class="bg-red-100 text-red-800 px-2 py-1 rounded text-sm"
+                  >17% OFF</span
+                >
+              </div>
+              <p class="text-gray-600">
+                A powerful blend of ayurvedic herbs and oils to strengthen hair
+                roots, reduce hair fall, and promote healthy hair growth
+                naturally.
+              </p>
+
+              <div class="space-y-4">
+                <div class="flex items-center space-x-4">
+                  <span class="text-gray-700 font-medium">Quantity:</span>
+                  <div class="flex items-center border rounded">
+                    <button
+                      class="px-3 py-2 hover:bg-gray-100 !rounded-button"
+                      onclick="decreaseQuantity()"
+                    >
+                      -
+                    </button>
+                    <span id="quantity" class="px-4 py-2 border-x">1</span>
+                    <button
+                      class="px-3 py-2 hover:bg-gray-100 !rounded-button"
+                      onclick="increaseQuantity()"
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
+
+                <button
+                  class="w-full bg-primary text-white py-3 px-6 rounded-button font-medium hover:bg-green-700 transition whitespace-nowrap"
+                >
+                  Add to Cart - ₹2430
+                </button>
+
+                <div class="flex space-x-4">
+                  <div class="flex items-center text-sm text-gray-600">
+                    <div class="w-5 h-5 flex items-center justify-center mr-2">
+                      <i class="ri-truck-line"></i>
+                    </div>
+                    Free Shipping
+                  </div>
+                  <div class="flex items-center text-sm text-gray-600">
+                    <div class="w-5 h-5 flex items-center justify-center mr-2">
+                      <i class="ri-arrow-go-back-line"></i>
+                    </div>
+                    30-Day Returns
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-b mb-8">
+        <nav class="flex space-x-8">
+          <button
+            class="tab-button py-4 px-2 border-b-2 border-transparent hover:text-primary transition active"
+            onclick="showTab('description')"
+          >
+            Description
+          </button>
+          <button
+            class="tab-button py-4 px-2 border-b-2 border-transparent hover:text-primary transition"
+            onclick="showTab('ingredients')"
+          >
+            Ingredients
+          </button>
+          <button
+            class="tab-button py-4 px-2 border-b-2 border-transparent hover:text-primary transition"
+            onclick="showTab('usage')"
+          >
+            How to Use
+          </button>
+          <button
+            class="tab-button py-4 px-2 border-b-2 border-transparent hover:text-primary transition"
+            onclick="showTab('reviews')"
+          >
+            Reviews
+          </button>
+          <button
+            class="tab-button py-4 px-2 border-b-2 border-transparent hover:text-primary transition"
+            onclick="showTab('faq')"
+          >
+            FAQ
+          </button>
+        </nav>
+      </div>
+
+      <div id="description" class="tab-content active">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          <div>
+            <h3 class="text-2xl font-bold mb-4">Pure Ayurvedic Formula</h3>
+            <p class="text-gray-600 mb-4">
+              Our Ayurvedic Neem Face Cream combines the ancient wisdom of
+              Ayurveda with modern skincare science. Formulated with pure neem
+              extract, turmeric, and other natural ingredients, this cream
+              provides deep nourishment while fighting acne and blemishes.
+            </p>
+            <p class="text-gray-600">
+              Suitable for all skin types, especially oily and acne-prone skin.
+              Free from harmful chemicals, parabens, and sulfates.
+            </p>
+          </div>
+          <div>
+            <img
+              src="https://readdy.ai/api/search-image?query=Natural%20ayurvedic%20skincare%20ingredients%20including%20fresh%20neem%20leaves%2C%20turmeric%20powder%2C%20aloe%20vera%2C%20natural%20herbs%20arranged%20beautifully%2C%20clean%20white%20background%2C%20organic%20beauty%20concept&width=400&height=300&seq=ayurvedic-ingredients&orientation=landscape"
+              alt="Natural ingredients"
+              class="w-full h-64 object-cover rounded-lg"
+            />
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="text-center p-6 bg-gray-50 rounded-lg">
+            <div
+              class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="ri-leaf-line text-xl"></i>
+            </div>
+            <h4 class="font-semibold mb-2">Reduces Acne</h4>
+            <p class="text-sm text-gray-600">
+              Natural antibacterial properties help fight acne-causing bacteria
+            </p>
+          </div>
+          <div class="text-center p-6 bg-gray-50 rounded-lg">
+            <div
+              class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="ri-drop-line text-xl"></i>
+            </div>
+            <h4 class="font-semibold mb-2">Deep Hydration</h4>
+            <p class="text-sm text-gray-600">
+              Provides long-lasting moisture without clogging pores
+            </p>
+          </div>
+          <div class="text-center p-6 bg-gray-50 rounded-lg">
+            <div
+              class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="ri-sun-line text-xl"></i>
+            </div>
+            <h4 class="font-semibold mb-2">Brightens Skin</h4>
+            <p class="text-sm text-gray-600">
+              Turmeric helps reduce dark spots and evens skin tone
+            </p>
+          </div>
+          <div class="text-center p-6 bg-gray-50 rounded-lg">
+            <div
+              class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="ri-shield-check-line text-xl"></i>
+            </div>
+            <h4 class="font-semibold mb-2">Natural Protection</h4>
+            <p class="text-sm text-gray-600">
+              Antioxidants protect skin from environmental damage
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div id="ingredients" class="tab-content">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-gray-50 p-6 rounded-lg hover:shadow-md transition">
+            <div
+              class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4"
+            >
+              <div class="w-8 h-8 flex items-center justify-center">
+                <i class="ri-leaf-line text-2xl text-primary"></i>
+              </div>
+            </div>
+            <h4 class="font-semibold mb-2">Neem Extract</h4>
+            <p class="text-sm text-gray-600">
+              Powerful antibacterial and anti-inflammatory properties that help
+              fight acne and soothe irritated skin.
+            </p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-lg hover:shadow-md transition">
+            <div
+              class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mb-4"
+            >
+              <div class="w-8 h-8 flex items-center justify-center">
+                <i class="ri-contrast-2-line text-2xl text-yellow-600"></i>
+              </div>
+            </div>
+            <h4 class="font-semibold mb-2">Turmeric</h4>
+            <p class="text-sm text-gray-600">
+              Natural antiseptic that brightens skin, reduces inflammation, and
+              helps fade dark spots and blemishes.
+            </p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-lg hover:shadow-md transition">
+            <div
+              class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4"
+            >
+              <div class="w-8 h-8 flex items-center justify-center">
+                <i class="ri-plant-line text-2xl text-green-600"></i>
+              </div>
+            </div>
+            <h4 class="font-semibold mb-2">Aloe Vera</h4>
+            <p class="text-sm text-gray-600">
+              Soothes and hydrates skin while providing cooling relief from
+              irritation and inflammation.
+            </p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-lg hover:shadow-md transition">
+            <div
+              class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-4"
+            >
+              <div class="w-8 h-8 flex items-center justify-center">
+                <i class="ri-drop-line text-2xl text-purple-600"></i>
+              </div>
+            </div>
+            <h4 class="font-semibold mb-2">Coconut Oil</h4>
+            <p class="text-sm text-gray-600">
+              Natural moisturizer that penetrates deep into skin, providing
+              lasting hydration without greasiness.
+            </p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-lg hover:shadow-md transition">
+            <div
+              class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mb-4"
+            >
+              <div class="w-8 h-8 flex items-center justify-center">
+                <i class="ri-flower-line text-2xl text-orange-600"></i>
+              </div>
+            </div>
+            <h4 class="font-semibold mb-2">Sandalwood</h4>
+            <p class="text-sm text-gray-600">
+              Calms sensitive skin, reduces redness, and provides a natural glow
+              with its cooling properties.
+            </p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-lg hover:shadow-md transition">
+            <div
+              class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-4"
+            >
+              <div class="w-8 h-8 flex items-center justify-center">
+                <i class="ri-water-flash-line text-2xl text-blue-600"></i>
+              </div>
+            </div>
+            <h4 class="font-semibold mb-2">Rose Water</h4>
+            <p class="text-sm text-gray-600">
+              Natural toner that balances skin pH, tightens pores, and provides
+              gentle hydration.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div id="usage" class="tab-content">
+        <div class="max-w-4xl mx-auto">
+          <h3 class="text-2xl font-bold text-center mb-8">How to Use</h3>
+          <div class="relative">
+            <div class="absolute top-16 left-0 right-0 h-0.5 bg-gray-200"></div>
+            <div class="relative grid grid-cols-1 md:grid-cols-4 gap-8">
+              <div class="text-center">
+                <div
+                  class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-4 relative z-10"
+                >
+                  <span class="text-xl font-bold">1</span>
+                </div>
+                <h4 class="font-semibold mb-2">Cleanse</h4>
+                <p class="text-sm text-gray-600">
+                  Start with clean, dry skin. Wash your face with a gentle
+                  cleanser and pat dry.
+                </p>
+              </div>
+              <div class="text-center">
+                <div
+                  class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-4 relative z-10"
+                >
+                  <span class="text-xl font-bold">2</span>
+                </div>
+                <h4 class="font-semibold mb-2">Apply</h4>
+                <p class="text-sm text-gray-600">
+                  Take a small amount of cream and apply evenly to your face and
+                  neck using gentle upward strokes.
+                </p>
+              </div>
+              <div class="text-center">
+                <div
+                  class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-4 relative z-10"
+                >
+                  <span class="text-xl font-bold">3</span>
+                </div>
+                <h4 class="font-semibold mb-2">Massage</h4>
+                <p class="text-sm text-gray-600">
+                  Gently massage the cream into your skin using circular motions
+                  until fully absorbed.
+                </p>
+              </div>
+              <div class="text-center">
+                <div
+                  class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-4 relative z-10"
+                >
+                  <span class="text-xl font-bold">4</span>
+                </div>
+                <h4 class="font-semibold mb-2">Enjoy</h4>
+                <p class="text-sm text-gray-600">
+                  Use twice daily, morning and evening, for best results.
+                  Visible improvements in 2-3 weeks.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="reviews" class="tab-content">
+        <div class="mb-8">
+          <div class="flex items-center justify-between mb-6">
+            <h3 class="text-2xl font-bold">Customer Reviews</h3>
+            <button
+              class="bg-primary text-white px-6 py-2 rounded-button hover:bg-green-700 transition whitespace-nowrap"
+            >
+              Write a Review
+            </button>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <div class="flex items-center mb-4">
+                <img
+                  src="https://readdy.ai/api/search-image?query=Professional%20headshot%20of%20a%20young%20woman%20with%20clear%20skin%2C%20smiling%2C%20natural%20lighting%2C%20clean%20background%2C%20portrait%20photography&width=60&height=60&seq=reviewer-1&orientation=squarish"
+                  alt="Sarah M."
+                  class="w-12 h-12 rounded-full object-cover mr-4"
+                />
+                <div>
+                  <h5 class="font-semibold">Sarah Mitchell</h5>
+                  <div class="flex text-yellow-400 text-sm">
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                  </div>
+                </div>
+              </div>
+              <p class="text-gray-600 text-sm">
+                "Amazing product! My acne has significantly reduced after using
+                this for 3 weeks. The texture is perfect - not too heavy or
+                greasy."
+              </p>
+              <div class="flex items-center mt-4 text-xs text-gray-500">
+                <span>Verified Purchase</span>
+                <span class="mx-2">•</span>
+                <span>2 weeks ago</span>
+              </div>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <div class="flex items-center mb-4">
+                <img
+                  src="https://readdy.ai/api/search-image?query=Professional%20headshot%20of%20a%20middle-aged%20woman%20with%20healthy%20skin%2C%20confident%20smile%2C%20natural%20lighting%2C%20clean%20background%2C%20portrait%20photography&width=60&height=60&seq=reviewer-2&orientation=squarish"
+                  alt="Emily R."
+                  class="w-12 h-12 rounded-full object-cover mr-4"
+                />
+                <div>
+                  <h5 class="font-semibold">Emily Rodriguez</h5>
+                  <div class="flex text-yellow-400 text-sm">
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-line"></i>
+                  </div>
+                </div>
+              </div>
+              <p class="text-gray-600 text-sm">
+                "Love the natural ingredients! My skin feels so much softer and
+                the dark spots are fading. Will definitely repurchase."
+              </p>
+              <div class="flex items-center mt-4 text-xs text-gray-500">
+                <span>Verified Purchase</span>
+                <span class="mx-2">•</span>
+                <span>1 month ago</span>
+              </div>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <div class="flex items-center mb-4">
+                <img
+                  src="https://readdy.ai/api/search-image?query=Professional%20headshot%20of%20a%20young%20man%20with%20clear%20skin%2C%20friendly%20smile%2C%20natural%20lighting%2C%20clean%20background%2C%20portrait%20photography&width=60&height=60&seq=reviewer-3&orientation=squarish"
+                  alt="David K."
+                  class="w-12 h-12 rounded-full object-cover mr-4"
+                />
+                <div>
+                  <h5 class="font-semibold">David Kim</h5>
+                  <div class="flex text-yellow-400 text-sm">
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                  </div>
+                </div>
+              </div>
+              <p class="text-gray-600 text-sm">
+                "Perfect for sensitive skin! No irritation at all and my skin
+                looks healthier. The neem really works for controlling oil."
+              </p>
+              <div class="flex items-center mt-4 text-xs text-gray-500">
+                <span>Verified Purchase</span>
+                <span class="mx-2">•</span>
+                <span>3 weeks ago</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="faq" class="tab-content">
+        <div class="max-w-3xl mx-auto">
+          <h3 class="text-2xl font-bold mb-8">Frequently Asked Questions</h3>
+          <div class="space-y-4">
+            <div class="border rounded-lg">
+              <button
+                class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 accordion-trigger"
+                onclick="toggleAccordion(this)"
+              >
+                <span class="font-semibold"
+                  >Is this suitable for sensitive skin?</span
+                >
+                <div class="w-5 h-5 flex items-center justify-center">
+                  <i class="ri-add-line accordion-icon"></i>
+                </div>
+              </button>
+              <div class="accordion-content px-6 pb-4">
+                <p class="text-gray-600">
+                  Yes, our Ayurvedic Neem Face Cream is formulated with natural
+                  ingredients that are gentle on sensitive skin. However, we
+                  recommend doing a patch test before first use.
+                </p>
+              </div>
+            </div>
+            <div class="border rounded-lg">
+              <button
+                class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 accordion-trigger"
+                onclick="toggleAccordion(this)"
+              >
+                <span class="font-semibold"
+                  >How long does it take to see results?</span
+                >
+                <div class="w-5 h-5 flex items-center justify-center">
+                  <i class="ri-add-line accordion-icon"></i>
+                </div>
+              </button>
+              <div class="accordion-content px-6 pb-4">
+                <p class="text-gray-600">
+                  Most users notice improvements in their skin within 2-3 weeks
+                  of regular use. For best results, use twice daily as part of
+                  your skincare routine.
+                </p>
+              </div>
+            </div>
+            <div class="border rounded-lg">
+              <button
+                class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 accordion-trigger"
+                onclick="toggleAccordion(this)"
+              >
+                <span class="font-semibold"
+                  >Can I use this with other skincare products?</span
+                >
+                <div class="w-5 h-5 flex items-center justify-center">
+                  <i class="ri-add-line accordion-icon"></i>
+                </div>
+              </button>
+              <div class="accordion-content px-6 pb-4">
+                <p class="text-gray-600">
+                  Yes, this cream can be incorporated into your existing
+                  skincare routine. Apply after cleansing and before sunscreen
+                  during the day.
+                </p>
+              </div>
+            </div>
+            <div class="border rounded-lg">
+              <button
+                class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 accordion-trigger"
+                onclick="toggleAccordion(this)"
+              >
+                <span class="font-semibold">Is this product cruelty-free?</span>
+                <div class="w-5 h-5 flex items-center justify-center">
+                  <i class="ri-add-line accordion-icon"></i>
+                </div>
+              </button>
+              <div class="accordion-content px-6 pb-4">
+                <p class="text-gray-600">
+                  Absolutely! We are committed to cruelty-free practices and
+                  never test our products on animals. All our products are
+                  ethically made.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section class="mt-16">
+        <h3 class="text-2xl font-bold text-center mb-8">You May Also Like</h3>
+        <div style="display: block">
+          <div class="bg-white rounded-lg shadow-sm p-6 mb-8">
+            <div class="flex justify-between items-center mb-6">
+              <h2 class="text-lg font-semibold text-gray-800 flex items-center">
+                <!-- <div
+                    class="w-5 h-5 mr-2 flex items-center justify-center text-primary"
+                  >
+                    <i class="ri-eye-line"></i>
+                  </div> -->
+                Recently Viewed Products
+              </h2>
+              <a href="#" class="text-primary text-sm hover:underline"
+                >View All</a
+              >
+            </div>
+
+            <!-- <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"> -->
+            <!-- <div
+                  class="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-shadow"
+                >
+                  <div class="h-48 overflow-hidden">
+                    <img
+                      src="https://readdy.ai/api/search-image?query=modern%20wireless%20earbuds%20with%20charging%20case%20on%20clean%20white%20background%2C%20professional%20product%20photography%2C%20high%20resolution%2C%20detailed&width=300&height=300&seq=4&orientation=squarish"
+                      alt="Wireless Earbuds"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div class="p-4">
+                    <h3 class="font-medium text-gray-800 mb-1">
+                      Premium Wireless Earbuds
+                    </h3>
+                    <p class="text-primary font-bold">$79.99</p>
+                  </div>
+                </div>
+
+                <div
+                  class="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-shadow"
+                >
+                  <div class="h-48 overflow-hidden">
+                    <img
+                      src="https://readdy.ai/api/search-image?query=minimalist%20smartwatch%20with%20leather%20band%20on%20clean%20white%20background%2C%20professional%20product%20photography%2C%20high%20resolution%2C%20detailed&width=300&height=300&seq=5&orientation=squarish"
+                      alt="Smartwatch"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div class="p-4">
+                    <h3 class="font-medium text-gray-800 mb-1">
+                      Fitness Smartwatch
+                    </h3>
+                    <p class="text-primary font-bold">$129.99</p>
+                  </div>
+                </div>
+
+                <div
+                  class="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-shadow"
+                >
+                  <div class="h-48 overflow-hidden">
+                    <img
+                      src="https://readdy.ai/api/search-image?query=portable%20bluetooth%20speaker%20on%20clean%20white%20background%2C%20professional%20product%20photography%2C%20high%20resolution%2C%20detailed&width=300&height=300&seq=6&orientation=squarish"
+                      alt="Bluetooth Speaker"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div class="p-4">
+                    <h3 class="font-medium text-gray-800 mb-1">
+                      Portable Bluetooth Speaker
+                    </h3>
+                    <p class="text-primary font-bold">$59.99</p>
+                  </div>
+                </div>
+
+               
+                <div
+                  class="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-shadow"
+                >
+                  <div class="h-48 overflow-hidden">
+                    <img
+                      src="https://readdy.ai/api/search-image?query=slim%20power%20bank%20with%20usb-c%20port%20on%20clean%20white%20background%2C%20professional%20product%20photography%2C%20high%20resolution%2C%20detailed&width=300&height=300&seq=7&orientation=squarish"
+                      alt="Power Bank"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div class="p-4">
+                    <h3 class="font-medium text-gray-800 mb-1">
+                      Fast Charging Power Bank
+                    </h3>
+                    <p class="text-primary font-bold">$45.50</p>
+                  </div>
+                </div> -->
+            <div
+              class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+            >
+              <!-- Product 1 -->
+              <div
+                class="product-card bg-white rounded-lg shadow-sm overflow-hidden"
+              >
+                <div class="relative">
+                  <img
+                    src="https://readdy.ai/api/search-image?query=Ayurvedic%20body%20butter%20cream%20in%20elegant%20glass%20jar%2C%20natural%20ingredients%20visible%2C%20professional%20product%20photography%2C%20soft%20lighting%2C%20minimalist%20style%2C%20clean%20background%2C%20high-end%20cosmetic%20product%20presentation&width=400&height=400&seq=product1&orientation=squarish"
+                    alt="Ayurvedic Fusion Body Butter"
+                    class="w-full h-64 object-cover object-top"
+                  />
+                  <div class="absolute top-3 right-3 flex space-x-2">
+                    <button
+                      class="w-8 h-8 flex items-center justify-center bg-white rounded-full shadow-sm text-gray-600 hover:text-primary"
+                    >
+                      <i class="ri-heart-line"></i>
+                    </button>
+                    <!-- <button
+                        class="w-8 h-8 flex items-center justify-center bg-white rounded-full shadow-sm text-gray-600 hover:text-primary product-quick-view"
+                        data-product="1"
+                      >
+                        <i class="ri-eye-line"></i>
+                      </button> -->
+                  </div>
+                  <div class="absolute top-3 left-3">
+                    <span
+                      class="bg-primary/90 text-white text-xs px-2 py-1 rounded"
+                      >New</span
+                    >
+                  </div>
+                </div>
+                <div class="p-4">
+                  <span class="text-xs text-gray-500">Skin Care</span>
+                  <h3 class="text-lg font-medium text-gray-900 mt-1">
+                    Ayurvedic Fusion Butter
+                  </h3>
+                  <p class="text-sm text-gray-600 mt-2 line-clamp-2">
+                    A rich, nourishing body butter infused with traditional
+                    Ayurvedic herbs to deeply moisturize and rejuvenate your
+                    skin.
+                  </p>
+                  <div class="flex items-center justify-between mt-4">
+                    <span class="text-primary font-medium">₹2024.99</span>
+                    <div class="flex items-center">
+                      <div class="flex text-yellow-400">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-half-fill"></i>
+                      </div>
+                      <span class="text-xs text-gray-500 ml-1">(32)</span>
+                    </div>
+                  </div>
+                  <div class="mt-4 flex space-x-2 btn-row">
+                    <button
+                      class="flex-1 bg-primary text-white py-2 rounded-button font-medium hover:bg-primary/90 transition-colors !rounded-button whitespace-nowrap add-to-cart-btn"
+                      data-product-id="1"
+                      onclick="showToast(
+'https://readdy.ai/api/search-image?query=Ayurvedic%20face%20cream%20in%20elegant%20glass%20jar%2C%20natural%20ingredients%20visible%2C%20professional%20product%20photography%2C%20soft%20lighting%2C%20minimalist%20style%2C%20clean%20background%2C%20high-end%20cosmetic%20product%20presentation&width=400&height=400&seq=product2&orientation=squarish',
+'Ayurvedic Fusion Face Cream'
+)"
+                    >
+                      Add to Cart
+                    </button>
+                    <a
+                      href="Ayurvedic-Neem-Face-Cream.html"
+                      class="product-details-link details-btn bg-gray-100 text-gray-800 px-4 py-2 rounded-button font-medium hover:bg-gray-200 transition-colors whitespace-nowrap"
+                      data-product="1"
+                      data-allow-navigation="true"
+                    >
+                      Details
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- Product 2 -->
+              <div
+                class="product-card bg-white rounded-lg shadow-sm overflow-hidden"
+              >
+                <div class="relative">
+                  <img
+                    src="https://readdy.ai/api/search-image?query=Ayurvedic%20face%20cream%20in%20elegant%20glass%20jar%2C%20natural%20ingredients%20visible%2C%20professional%20product%20photography%2C%20soft%20lighting%2C%20minimalist%20style%2C%20clean%20background%2C%20high-end%20cosmetic%20product%20presentation&width=400&height=400&seq=product2&orientation=squarish"
+                    alt="Ayurvedic Fusion Face Cream"
+                    class="w-full h-64 object-cover object-top"
+                  />
+                  <div class="absolute top-3 right-3 flex space-x-2">
+                    <button
+                      class="w-8 h-8 flex items-center justify-center bg-white rounded-full shadow-sm text-gray-600 hover:text-primary"
+                    >
+                      <i class="ri-heart-line"></i>
+                    </button>
+                    <!-- <button
+                        class="w-8 h-8 flex items-center justify-center bg-white rounded-full shadow-sm text-gray-600 hover:text-primary product-quick-view"
+                        data-product="2"
+                      >
+                        <i class="ri-eye-line"></i>
+                      </button> -->
+                  </div>
+                  <div class="absolute top-3 left-3">
+                    <span
+                      class="bg-secondary/90 text-white text-xs px-2 py-1 rounded"
+                      >Bestseller</span
+                    >
+                  </div>
+                </div>
+                <div class="p-4">
+                  <span class="text-xs text-gray-500">Skin Care</span>
+                  <h3 class="text-lg font-medium text-gray-900 mt-1">
+                    Ayurvedic Fusion Face Cream
+                  </h3>
+                  <p class="text-sm text-gray-600 mt-2 line-clamp-2">
+                    A luxurious face cream blending ancient Ayurvedic wisdom
+                    with modern skincare science for radiant, youthful skin.
+                  </p>
+                  <div class="flex items-center justify-between mt-4">
+                    <span class="text-primary font-medium">₹10999</span>
+                    <div class="flex items-center">
+                      <div class="flex text-yellow-400">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                      </div>
+                      <span class="text-xs text-gray-500 ml-1">(48)</span>
+                    </div>
+                  </div>
+                  <div class="mt-4 flex space-x-2 btn-row">
+                    <button
+                      class="flex-1 bg-primary text-white py-2 rounded-button font-medium hover:bg-primary/90 transition-colors !rounded-button whitespace-nowrap add-to-cart-btn"
+                      data-product-id="2"
+                      onclick="showToast(
+'https://readdy.ai/api/search-image?query=Ayurvedic%20face%20cream%20in%20elegant%20glass%20jar%2C%20natural%20ingredients%20visible%2C%20professional%20product%20photography%2C%20soft%20lighting%2C%20minimalist%20style%2C%20clean%20background%2C%20high-end%20cosmetic%20product%20presentation&width=400&height=400&seq=product2&orientation=squarish',
+'Ayurvedic Fusion Face Cream'
+)"
+                    >
+                      Add to Cart
+                    </button>
+                    <a
+                      href="Ayurvedic-Neem-Face-Cream.html"
+                      class="product-details-link details-btn bg-gray-100 text-gray-800 px-4 py-2 rounded-button font-medium hover:bg-gray-200 transition-colors whitespace-nowrap"
+                      data-product="1"
+                      data-allow-navigation="true"
+                    >
+                      Details
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- Product 3 -->
+              <div
+                class="product-card bg-white rounded-lg shadow-sm overflow-hidden"
+              >
+                <div class="relative">
+                  <img
+                    src="https://readdy.ai/api/search-image?query=Calendula%20body%20oil%20in%20elegant%20glass%20bottle%2C%20natural%20ingredients%20visible%2C%20professional%20product%20photography%2C%20soft%20lighting%2C%20minimalist%20style%2C%20clean%20background%2C%20high-end%20cosmetic%20product%20presentation&width=400&height=400&seq=product3&orientation=squarish"
+                    alt="Nourishing Calendula Body Oil"
+                    class="w-full h-64 object-cover object-top"
+                  />
+                  <div class="absolute top-3 right-3 flex space-x-2">
+                    <button
+                      class="w-8 h-8 flex items-center justify-center bg-white rounded-full shadow-sm text-gray-600 hover:text-primary"
+                    >
+                      <i class="ri-heart-line"></i>
+                    </button>
+                    <!-- <button
+                        class="w-8 h-8 flex items-center justify-center bg-white rounded-full shadow-sm text-gray-600 hover:text-primary product-quick-view"
+                        data-product="3"
+                      >
+                        <i class="ri-eye-line"></i>
+                      </button> -->
+                  </div>
+                  <div class="absolute top-3 left-3">
+                    <span
+                      class="bg-green-500/90 text-white text-xs px-2 py-1 rounded"
+                      >Organic</span
+                    >
+                  </div>
+                </div>
+                <div class="p-4">
+                  <span class="text-xs text-gray-500">Skin Care</span>
+                  <h3 class="text-lg font-medium text-gray-900 mt-1">
+                    Nourishing Calendula Oil
+                  </h3>
+                  <p class="text-sm text-gray-600 mt-2 line-clamp-2">
+                    A lightweight, fast-absorbing body oil with calendula
+                    extract to soothe and nourish even the most sensitive skin.
+                  </p>
+                  <div class="flex items-center justify-between mt-4">
+                    <span class="text-primary font-medium">₹5040</span>
+                    <div class="flex items-center">
+                      <div class="flex text-yellow-400">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-line"></i>
+                      </div>
+                      <span class="text-xs text-gray-500 ml-1">(29)</span>
+                    </div>
+                  </div>
+                  <div class="mt-4 flex space-x-2 btn-row">
+                    <button
+                      class="flex-1 bg-primary text-white py-2 rounded-button font-medium hover:bg-primary/90 transition-colors !rounded-button whitespace-nowrap add-to-cart-btn"
+                      data-product-id="3"
+                      onclick="showToast(
+'https://readdy.ai/api/search-image?query=Ayurvedic%20face%20cream%20in%20elegant%20glass%20jar%2C%20natural%20ingredients%20visible%2C%20professional%20product%20photography%2C%20soft%20lighting%2C%20minimalist%20style%2C%20clean%20background%2C%20high-end%20cosmetic%20product%20presentation&width=400&height=400&seq=product2&orientation=squarish',
+'Ayurvedic Fusion Face Cream'
+)"
+                    >
+                      Add to Cart
+                    </button>
+                    <a
+                      href="Ayurvedic-Neem-Face-Cream.html"
+                      class="product-details-link details-btn bg-gray-100 text-gray-800 px-4 py-2 rounded-button font-medium hover:bg-gray-200 transition-colors whitespace-nowrap"
+                      data-product="1"
+                      data-allow-navigation="true"
+                    >
+                      Details
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="product-card bg-white rounded-lg shadow-sm overflow-hidden"
+              >
+                <div class="relative">
+                  <img
+                    src="https://readdy.ai/api/search-image?query=Ayurvedic%20face%20cream%20in%20elegant%20glass%20jar%2C%20natural%20ingredients%20visible%2C%20professional%20product%20photography%2C%20soft%20lighting%2C%20minimalist%20style%2C%20clean%20background%2C%20high-end%20cosmetic%20product%20presentation&width=400&height=400&seq=product2&orientation=squarish"
+                    alt="Ayurvedic Fusion Face Cream"
+                    class="w-full h-64 object-cover object-top"
+                  />
+                  <div class="absolute top-3 right-3 flex space-x-2">
+                    <button
+                      class="w-8 h-8 flex items-center justify-center bg-white rounded-full shadow-sm text-gray-600 hover:text-primary"
+                    >
+                      <i class="ri-heart-line"></i>
+                    </button>
+                    <!-- <button
+                        class="w-8 h-8 flex items-center justify-center bg-white rounded-full shadow-sm text-gray-600 hover:text-primary product-quick-view"
+                        data-product="2"
+                      >
+                        <i class="ri-eye-line"></i>
+                      </button> -->
+                  </div>
+                  <div class="absolute top-3 left-3">
+                    <span
+                      class="bg-secondary/90 text-white text-xs px-2 py-1 rounded"
+                      >Bestseller</span
+                    >
+                  </div>
+                </div>
+                <div class="p-4">
+                  <span class="text-xs text-gray-500">Skin Care</span>
+                  <h3 class="text-lg font-medium text-gray-900 mt-1">
+                    Ayurvedic Fusion Face Cream
+                  </h3>
+                  <p class="text-sm text-gray-600 mt-2 line-clamp-2">
+                    A luxurious face cream blending ancient Ayurvedic wisdom
+                    with modern skincare science for radiant, youthful skin.
+                  </p>
+                  <div class="flex items-center justify-between mt-4">
+                    <span class="text-primary font-medium">₹10999</span>
+                    <div class="flex items-center">
+                      <div class="flex text-yellow-400">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                      </div>
+                      <span class="text-xs text-gray-500 ml-1">(48)</span>
+                    </div>
+                  </div>
+                  <div class="mt-4 flex space-x-2 btn-row">
+                    <button
+                      class="flex-1 bg-primary text-white py-2 rounded-button font-medium hover:bg-primary/90 transition-colors !rounded-button whitespace-nowrap add-to-cart-btn"
+                      data-product-id="2"
+                      onclick="showToast(
+'https://readdy.ai/api/search-image?query=Ayurvedic%20face%20cream%20in%20elegant%20glass%20jar%2C%20natural%20ingredients%20visible%2C%20professional%20product%20photography%2C%20soft%20lighting%2C%20minimalist%20style%2C%20clean%20background%2C%20high-end%20cosmetic%20product%20presentation&width=400&height=400&seq=product2&orientation=squarish',
+'Ayurvedic Fusion Face Cream'
+)"
+                    >
+                      Add to Cart
+                    </button>
+                    <a
+                      href="Ayurvedic-Neem-Face-Cream.html"
+                      class="product-details-link details-btn bg-gray-100 text-gray-800 px-4 py-2 rounded-button font-medium hover:bg-gray-200 transition-colors whitespace-nowrap"
+                      data-product="1"
+                      data-allow-navigation="true"
+                    >
+                      Details
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- </div> -->
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script id="image-gallery">
+      function changeMainImage(src) {
+        document.getElementById("main-image").src = src;
+        document.querySelectorAll(".thumbnail").forEach((thumb) => {
+          thumb.classList.remove("border-primary");
+          thumb.classList.add("border-transparent");
+        });
+        event.target.classList.remove("border-transparent");
+        event.target.classList.add("border-primary");
+      }
+    </script>
+
+    <script id="productDetailsScript">
+      document.addEventListener("DOMContentLoaded", function () {
+        const productDetailsPage =
+          document.getElementById("productDetailsPage");
+        const backToProducts = document.getElementById("backToProducts");
+
+        const detailsLinks = document.querySelectorAll(".product-details-link");
+        detailsLinks.forEach((link) => {
+          link.addEventListener("click", function (e) {
+            // ✅ Only prevent default if not explicitly marked for navigation
+            if (this.dataset.allowNavigation !== "true") {
+              e.preventDefault();
+
+              const productId = this.getAttribute("data-product");
+              const product = products[productId];
+              document.getElementById("detailsName").textContent = product.name;
+              document.getElementById("detailsCategory").textContent =
+                product.category;
+              document.getElementById("detailsPrice").textContent =
+                product.price;
+              document.getElementById("detailsDescription").textContent =
+                product.description;
+              document.getElementById("detailsMainImage").src = product.image;
+              document.getElementById("detailsMainImage").alt = product.name;
+
+              productDetailsPage.classList.remove("hidden");
+              document.body.style.overflow = "hidden";
+            }
+            // else allow default browser navigation
+          });
+        });
+
+        backToProducts.addEventListener("click", function () {
+          productDetailsPage.classList.add("hidden");
+          document.body.style.overflow = "auto";
+        });
+      });
+
+      function showToast(productImage = "", productName = "") {
+        const toast = document.getElementById("toastMessage");
+        const image = document.getElementById("toastImage");
+        const name = document.getElementById("toastProductName");
+
+        image.src = productImage;
+        name.textContent = productName;
+
+        toast.style.display = "block";
+
+        // Auto-hide after 3 seconds
+        setTimeout(() => {
+          toast.style.display = "none";
+        }, 3000);
+      }
+    </script>
+
+    <script id="quantity-controls">
+      let quantity = 1;
+
+      function increaseQuantity() {
+        quantity++;
+        document.getElementById("quantity").textContent = quantity;
+      }
+
+      function decreaseQuantity() {
+        if (quantity > 1) {
+          quantity--;
+          document.getElementById("quantity").textContent = quantity;
+        }
+      }
+    </script>
+
+    <script id="tab-navigation">
+      function showTab(tabName) {
+        document.querySelectorAll(".tab-content").forEach((content) => {
+          content.classList.remove("active");
+        });
+        document.querySelectorAll(".tab-button").forEach((button) => {
+          button.classList.remove("active");
+        });
+
+        document.getElementById(tabName).classList.add("active");
+        event.target.classList.add("active");
+      }
+    </script>
+
+    <script id="accordion-functionality">
+      function toggleAccordion(button) {
+        const content = button.nextElementSibling;
+        const icon = button.querySelector(".accordion-icon");
+
+        if (content.classList.contains("active")) {
+          content.classList.remove("active");
+          icon.className = "ri-add-line accordion-icon";
+        } else {
+          document.querySelectorAll(".accordion-content").forEach((item) => {
+            item.classList.remove("active");
+          });
+          document.querySelectorAll(".accordion-icon").forEach((item) => {
+            item.className = "ri-add-line accordion-icon";
+          });
+
+          content.classList.add("active");
+          icon.className = "ri-subtract-line accordion-icon";
+        }
+      }
+    </script>
+    <!-- Cart Sidebar -->
+    <div
+      id="cartSidebar"
+      class="fixed inset-y-0 right-0 w-96 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out z-50"
+    >
+      <div class="flex flex-col h-full">
+        <!-- Cart Header -->
+        <div class="p-6 border-b border-gray-200">
+          <div class="flex items-center justify-between">
+            <h2 class="text-2xl font-bold text-gray-900">Shopping Cart</h2>
+            <button id="closeCart" class="text-gray-500 hover:text-gray-700">
+              <i class="ri-close-line ri-lg"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Cart Items -->
+        <div class="flex-1 overflow-y-auto p-6">
+          <!-- Cart Item 1 -->
+          <div class="flex items-center py-6 border-b border-gray-200">
+            <img
+              src="https://readdy.ai/api/search-image?query=Ayurvedic%20body%20butter%20cream%20in%20elegant%20glass%20jar%2C%20natural%20ingredients%20visible%2C%20professional%20product%20photography%2C%20soft%20lighting%2C%20minimalist%20style%2C%20clean%20background%2C%20high-end%20cosmetic%20product%20presentation&width=400&height=400&seq=product1&orientation=squarish"
+              alt="Ayurvedic Fusion Body Butter"
+              class="w-20 h-20 object-cover rounded-lg"
+            />
+            <div class="ml-4 flex-1">
+              <h3 class="text-sm font-medium text-gray-900">
+                Ayurvedic Fusion Butter
+              </h3>
+              <p class="text-sm text-gray-500 mt-1">₹24.99</p>
+              <div class="flex items-center mt-2">
+                <button
+                  class="text-gray-500 hover:text-primary cart-qty-decrease"
+                >
+                  <i class="ri-subtract-line"></i>
+                </button>
+                <input
+                  type="number"
+                  value="1"
+                  min="1"
+                  class="w-12 text-center border-none text-sm"
+                />
+                <button
+                  class="text-gray-500 hover:text-primary cart-qty-increase"
+                >
+                  <i class="ri-add-line"></i>
+                </button>
+              </div>
+            </div>
+            <button class="ml-4 text-gray-400 hover:text-red-500">
+              <i class="ri-delete-bin-line"></i>
+            </button>
+          </div>
+
+          <!-- Cart Item 2 -->
+          <div class="flex items-center py-6 border-b border-gray-200">
+            <img
+              src="https://readdy.ai/api/search-image?query=Ayurvedic%20face%20cream%20in%20elegant%20glass%20jar%2C%20natural%20ingredients%20visible%2C%20professional%20product%20photography%2C%20soft%20lighting%2C%20minimalist%20style%2C%20clean%20background%2C%20high-end%20cosmetic%20product%20presentation&width=400&height=400&seq=product2&orientation=squarish"
+              alt="Ayurvedic Fusion Face Cream"
+              class="w-20 h-20 object-cover rounded-lg"
+            />
+            <div class="ml-4 flex-1">
+              <h3 class="text-sm font-medium text-gray-900">
+                Ayurvedic Fusion Face Cream
+              </h3>
+              <p class="text-sm text-gray-500 mt-1">₹10999</p>
+              <div class="flex items-center mt-2">
+                <button
+                  class="text-gray-500 hover:text-primary cart-qty-decrease"
+                >
+                  <i class="ri-subtract-line"></i>
+                </button>
+                <input
+                  type="number"
+                  value="1"
+                  min="1"
+                  class="w-12 text-center border-none text-sm"
+                />
+                <button
+                  class="text-gray-500 hover:text-primary cart-qty-increase"
+                >
+                  <i class="ri-add-line"></i>
+                </button>
+              </div>
+            </div>
+            <button class="ml-4 text-gray-400 hover:text-red-500">
+              <i class="ri-delete-bin-line"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Cart Footer -->
+        <div class="p-6 border-t border-gray-200">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-base font-medium text-gray-900">Subtotal</span>
+            <span class="text-base font-medium text-gray-900">₹4870</span>
+          </div>
+          <div class="space-y-3">
+            <button
+              id="continueShopping"
+              class="w-full bg-gray-100 text-gray-800 py-3 rounded-button font-medium hover:bg-gray-200 transition-colors !rounded-button whitespace-nowrap"
+            >
+              Continue Shopping
+            </button>
+            <button
+              class="w-full bg-primary text-white py-3 rounded-button font-medium hover:bg-primary/90 transition-colors !rounded-button whitespace-nowrap"
+            >
+              Proceed to Checkout
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Overlay -->
+    <div
+      id="cartOverlay"
+      class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden"
+    ></div>
+
+    <script id="dashboard-interactions">
+      document.addEventListener("DOMContentLoaded", function () {
+        // Sidebar link active state
+        const sidebarLinks = document.querySelectorAll(".sidebar-link");
+
+        sidebarLinks.forEach((link) => {
+          link.addEventListener("click", function (e) {
+            // Remove active class from all links
+            sidebarLinks.forEach((l) => l.classList.remove("active"));
+
+            // Add active class to clicked link
+            this.classList.add("active");
+          });
+        });
+      });
+      function showSection(id) {
+        // Hide all content sections
+        document.querySelectorAll(".page-section").forEach((section) => {
+          section.style.display = "none";
+        });
+
+        // Show the target section
+        const target = document.getElementById(id);
+        if (target) {
+          target.style.display = "block";
+        }
+
+        // Update active sidebar link
+        document.querySelectorAll(".sidebar-link").forEach((link) => {
+          link.classList.remove("active", "text-gray-800");
+          link.classList.add("text-gray-600");
+        });
+
+        const clickedLink = Array.from(
+          document.querySelectorAll(".sidebar-link")
+        ).find((link) => link.getAttribute("onclick")?.includes(id));
+
+        if (clickedLink) {
+          clickedLink.classList.add("active");
+          clickedLink.classList.remove("text-gray-600");
+          clickedLink.classList.add("text-gray-800");
+        }
+      }
+
+      // Show dashboard by default on load
+      document.addEventListener("DOMContentLoaded", function () {
+        showSection("wishlist-section");
+      });
+    </script>
+    <script id="cartScript">
+      document.addEventListener("DOMContentLoaded", function () {
+        const cartButton = document.getElementById("cartButton");
+        const cartSidebar = document.getElementById("cartSidebar");
+        const cartOverlay = document.getElementById("cartOverlay");
+        const closeCart = document.getElementById("closeCart");
+        const continueShopping = document.getElementById("continueShopping");
+
+        function openCart() {
+          cartSidebar.classList.remove("translate-x-full");
+          cartOverlay.classList.remove("hidden");
+          document.body.style.overflow = "hidden";
+        }
+
+        function closeCartSidebar() {
+          cartSidebar.classList.add("translate-x-full");
+          cartOverlay.classList.add("hidden");
+          document.body.style.overflow = "auto";
+        }
+
+        cartButton.addEventListener("click", openCart);
+        closeCart.addEventListener("click", closeCartSidebar);
+        continueShopping.addEventListener("click", closeCartSidebar);
+        cartOverlay.addEventListener("click", closeCartSidebar);
+
+        // Cart quantity controls
+        const decreaseButtons = document.querySelectorAll(".cart-qty-decrease");
+        const increaseButtons = document.querySelectorAll(".cart-qty-increase");
+
+        decreaseButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            const input = this.nextElementSibling;
+            let value = parseInt(input.value);
+            if (value > 1) {
+              input.value = value - 1;
+            }
+          });
+        });
+
+        increaseButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            const input = this.previousElementSibling;
+            let value = parseInt(input.value);
+            input.value = value + 1;
+          });
+        });
+      });
+    </script>
+    <script id="addToCartHideScript">
+      document.addEventListener("DOMContentLoaded", function () {
+        let addedToCart = JSON.parse(
+          sessionStorage.getItem("addedToCartProducts") || "[]"
+        );
+        document.querySelectorAll(".add-to-cart-btn").forEach(function (btn) {
+          const pid = btn.getAttribute("data-product-id");
+          const btnRow = btn.closest(".btn-row");
+          const detailsBtn = btnRow
+            ? btnRow.querySelector(".details-btn")
+            : null;
+          function showDetailsFullWidth() {
+            if (btnRow) btnRow.classList.remove("space-x-2");
+            if (detailsBtn) {
+              detailsBtn.classList.add("flex-1", "w-full");
+              detailsBtn.classList.remove("px-4");
+              detailsBtn.style.textAlign = "center";
+              detailsBtn.style.display = "block";
+            }
+          }
+          if (addedToCart.includes(pid)) {
+            btn.style.display = "none";
+            showDetailsFullWidth();
+          }
+          btn.addEventListener("click", function () {
+            if (!addedToCart.includes(pid)) {
+              addedToCart.push(pid);
+              sessionStorage.setItem(
+                "addedToCartProducts",
+                JSON.stringify(addedToCart)
+              );
+            }
+            btn.style.display = "none";
+            showDetailsFullWidth();
+          });
+        });
+      });
+    </script>
+    <script id="productDetailsScript">
+      document.addEventListener("DOMContentLoaded", function () {
+        const productDetailsPage =
+          document.getElementById("productDetailsPage");
+        const backToProducts = document.getElementById("backToProducts");
+
+        const detailsLinks = document.querySelectorAll(".product-details-link");
+        detailsLinks.forEach((link) => {
+          link.addEventListener("click", function (e) {
+            // ✅ Only prevent default if not explicitly marked for navigation
+            if (this.dataset.allowNavigation !== "true") {
+              e.preventDefault();
+
+              const productId = this.getAttribute("data-product");
+              const product = products[productId];
+              document.getElementById("detailsName").textContent = product.name;
+              document.getElementById("detailsCategory").textContent =
+                product.category;
+              document.getElementById("detailsPrice").textContent =
+                product.price;
+              document.getElementById("detailsDescription").textContent =
+                product.description;
+              document.getElementById("detailsMainImage").src = product.image;
+              document.getElementById("detailsMainImage").alt = product.name;
+
+              productDetailsPage.classList.remove("hidden");
+              document.body.style.overflow = "hidden";
+            }
+            // else allow default browser navigation
+          });
+        });
+
+        backToProducts.addEventListener("click", function () {
+          productDetailsPage.classList.add("hidden");
+          document.body.style.overflow = "auto";
+        });
+      });
+
+      function showToast(productImage = "", productName = "") {
+        const toast = document.getElementById("toastMessage");
+        const image = document.getElementById("toastImage");
+        const name = document.getElementById("toastProductName");
+
+        image.src = productImage;
+        name.textContent = productName;
+
+        toast.style.display = "block";
+
+        // Auto-hide after 3 seconds
+        setTimeout(() => {
+          toast.style.display = "none";
+        }, 3000);
+      }
+    </script>
+    <footer class="bg-white pt-16 pb-8">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          <!-- About -->
+          <div>
+            <h3 class="text-xl font-bold text-gray-900 mb-4">About Ojasvi</h3>
+            <p class="text-gray-600 mb-4">
+              Ojasvi is dedicated to bringing the ancient wisdom of Ayurveda to
+              modern skincare and haircare. Our products are handcrafted with
+              love, tradition, and the finest natural ingredients.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition-colors"
+              >
+                <i class="ri-facebook-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition-colors"
+              >
+                <i class="ri-instagram-line"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition-colors"
+              >
+                <i class="ri-twitter-x-line"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition-colors"
+              >
+                <i class="ri-pinterest-line"></i>
+              </a>
+            </div>
+          </div>
+          <!-- Quick Links -->
+          <!-- <div>
+            <h3 class="text-xl font-bold text-gray-900 mb-4">Quick Links</h3>
+            <ul class="space-y-3">
+              <li>
+                <a href="#" class="text-gray-600 hover:text-primary">Home</a>
+              </li>
+              <li>
+                <a href="#" class="text-gray-600 hover:text-primary">Shop</a>
+              </li>
+              <li>
+                <a href="#" class="text-gray-600 hover:text-primary"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-600 hover:text-primary">Blog</a>
+              </li>
+              <li>
+                <a href="#" class="text-gray-600 hover:text-primary">Contact</a>
+              </li>
+            </ul>
+          </div> -->
+          <!-- Customer Service -->
+          <div>
+            <h3 class="text-xl font-bold text-gray-900 mb-4">
+              Customer Service
+            </h3>
+            <ul class="space-y-3">
+              <li>
+                <a href="#" class="text-gray-600 hover:text-primary"
+                  >My Account</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-600 hover:text-primary"
+                  >Track Your Order</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-600 hover:text-primary"
+                  >Shipping Policy</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-600 hover:text-primary"
+                  >Returns & Exchanges</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-600 hover:text-primary">FAQs</a>
+              </li>
+            </ul>
+          </div>
+          <!-- Contact -->
+          <div>
+            <h3 class="text-xl font-bold text-gray-900 mb-4">Contact Us</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <i class="ri-map-pin-line text-primary mt-1 mr-3"></i>
+                <span class="text-gray-600"
+                  >123 Ayurveda Lane, Wellness District, Natural City,
+                  12345</span
+                >
+              </li>
+              <li class="flex items-center">
+                <i class="ri-phone-line text-primary mr-3"></i>
+                <span class="text-gray-600">+1 (234) 567-8900</span>
+              </li>
+              <li class="flex items-center">
+                <i class="ri-mail-line text-primary mr-3"></i>
+                <span class="text-gray-600">ojasvidermacare@gmail.com</span>
+              </li>
+              <li class="flex items-center">
+                <i class="ri-time-line text-primary mr-3"></i>
+                <span class="text-gray-600">Monday-Friday: 9am-6pm</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Bottom Footer -->
+        <div class="pt-8 border-t border-gray-200">
+          <div class="flex flex-col md:flex-row justify-between items-center">
+            <p class="text-gray-600 mb-4 md:mb-0">
+              &copy; 2025 Ojasvi. All rights reserved.
+            </p>
+            <div class="flex items-center space-x-4">
+              <span class="text-gray-600">We Accept:</span>
+              <div class="flex space-x-3">
+                <i class="ri-visa-fill text-blue-600 text-2xl"></i>
+                <i class="ri-mastercard-fill text-orange-500 text-2xl"></i>
+                <i class="ri-paypal-fill text-blue-800 text-2xl"></i>
+                <i class="ri-amazon-pay-fill text-yellow-500 text-2xl"></i>
+                <i class="ri-apple-fill text-gray-800 text-2xl"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
